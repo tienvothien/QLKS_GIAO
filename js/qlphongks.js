@@ -118,3 +118,53 @@ $(document).on('click', '.sua_phong', function(){
       //           });
       //       }
       // });
+
+      // xoa phong
+      $(document).on('click', '.xoaphong', function(){
+           var ma_phong_sua = $(this).attr("id");
+           $.ajax({
+                url:"./fetch.php",
+                method:"POST",
+                data:{ma_phong_sua:ma_phong_sua},
+                dataType:"json",
+                success:function(data){
+                    $('#ma_phong_xoa_2').val(data.MA_PHONG);
+                    $('#ten_loai_phong_xoa_2').val(data.TEN_LOAI_PHONG);
+                    $('#maphong_xoa_2').val(data.MA_PHONG);
+                    
+                    $('#insert1').val("Xóa");
+                    $('#xoa_maphong_data_Modal').modal('show');
+                }
+
+           });
+      });
+            // hiện thông báo khi bấm nút xóa
+      $(document).on('submit', 'form[data-confirm]', function(e){
+        var maphong_xoa_2 = $('#maphong_xoa_2').val();
+        if (maphong_xoa_2) {
+
+        if(!confirm($(this).data('confirm'))){
+          e.stopImmediatePropagation();
+          e.preventDefault();
+        }else{
+          // //xu ly nhấn nút xóa thiết bị
+          // alert(maphong_xoa_2);
+              event.preventDefault();
+              $.ajax({
+                url:"./insert.php",
+                method:"POST",
+                data:{maphong_xoa_2:maphong_xoa_2},
+                success:function(data129){
+                  if (data129==99) {
+                    alert('Xóa phòng thành công');
+                    $('#xoa_phong_form')[0].reset();
+                    $('#xoa_maphong_data_Modal').modal('hide');
+                    $('#dlphong').load('./qlphong.php');
+                  }else {
+                    alert('Lỗi xóa phòng lỗi');
+                  }
+                }
+            });
+        }
+      }
+    });

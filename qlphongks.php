@@ -118,9 +118,9 @@ if ($num > 0) {
                             <input disabled type="text" name="ma_phong_sua" id="ma_phong_sua" class="form-control "style="text-transform: uppercase;" />
                             <br />
                             <label>Tên Phòng</label>
-                            <textarea  name="ten_loai_phong_sua" id="ten_loai_phong_sua" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                            <textarea di  name="ten_loai_phong_sua" id="ten_loai_phong_sua" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
                             <br />
-                            <input type="hidden" name="mathietbi_sua_1" id="mathietbi_sua_1" />
+                            <input type="hidden" name="ma_phong_sua_1" id="ma_phong_sua_1" />
                             <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
                             <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-danger capnhattb" />
                         </form>
@@ -132,7 +132,7 @@ if ($num > 0) {
             </div>
         </div>
         <!-- Xoa thiêt bị -->
-        <div id="xoa_data_Modal" class="modal fade">
+        <div id="xoa_maphong_data_Modal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -140,14 +140,14 @@ if ($num > 0) {
                         <h4 class="modal-title">Xóa thiết bị</h4>
                     </div>
                     <div class="modal-body">
-                        <form method="post" id="xoa_tb_form" data-confirm="Bạn có chắn muốn xóa thông tin này?">
-                            <label>Mã thiết bị</label>
-                            <input disabled type="text" name="ma_tb_xoa" id="ma_tb_xoa" class="form-control "style="text-transform: uppercase;" />
+                        <form method="post" id="xoa_phong_form" data-confirm="Bạn có chắn muốn xóa thông tin này?">
+                            <label>Mã Phòng</label>
+                            <input disabled type="text" name="ma_phong_xoa_2" id="ma_phong_xoa_2" class="form-control "style="text-transform: uppercase;" />
                             <br />
-                            <label>Tên thiết bị</label>
-                            <input disabled type="text" name="ten_tb_xoa" id="ten_tb_xoa" class="form-control "style="text-transform: capitalize;" />
-                            <br>
-                            <input type="hidden" name="mathietbi_xoa_2" id="mathietbi_xoa_2" />
+                            <label>Tên Phòng</label>
+                            <textarea disabled=""  name="ten_loai_phong_xoa_2" id="ten_loai_phong_xoa_2" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                            <br />
+                            <input type="hidden" name="maphong_xoa_2" id="maphong_xoa_2" />
                             <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
                             <input type="submit" name="insert1" id="insert1" value="Insert" class="btn btn-danger"  />
                         </form>

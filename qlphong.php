@@ -1,6 +1,6 @@
 <?php
 include 'conn.php';
-$dl1 = mysqli_query($conn, "SELECT * FROM phong");
+$dl1 = mysqli_query($conn, "SELECT * FROM phong where xoa =0");
 if (mysqli_num_rows($dl1)) {
 	while ($row = mysqli_fetch_array($dl1)) {
 		echo "
