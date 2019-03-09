@@ -26,27 +26,27 @@ session_start();
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-right ">
                             <button type="button" class="btn btn-info btn-lg nutthemnek " data-toggle="modal" data-target="#myModal">Thêm phòng</button>
                         </div>
-                         <div class="modal fade " id="myModal" role="dialog">
-                <div class="modal-dialog modal-sm themphong">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h3 class="modal-title">Thêm phòng</h3>
-                        </div>
-                        <div class="modal-body">
-                            <form style="font-size: 20px; margin: auto;" class="form-horizontal"  id="from_them_phong_moi" name="from_them_phong_moi" action="">
-                                <div class="form-group">
-                                    <label class="control-label col-sm-4" for="email">Mã phòng</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control " name="ma_phong_them1" id="ma_phong_them1" style="text-transform: uppercase;" placeholder="Nhập mã phòng" name="maphong">
+                        <div class="modal fade " id="myModal" role="dialog">
+                            <div class="modal-dialog modal-sm themphong">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h3 class="modal-title">Thêm phòng</h3>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-4" for="sel1">Loại phòng</label>
-                                    <div class="col-sm-8">
-                                        <select class="form-control select_lp"  name="ma_loai_phong" id="ma_loai_phong">
-                                            <option value="" >Chọn Loại phòng</option>
-                                            <?php
+                                    <div class="modal-body">
+                                        <form style="font-size: 20px; margin: auto;" class="form-horizontal"  id="from_them_phong_moi" name="from_them_phong_moi" action="">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-4" for="email">Mã phòng</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control " name="ma_phong_them1" id="ma_phong_them1" style="text-transform: uppercase;" placeholder="Nhập mã phòng" name="maphong">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-4" for="sel1">Loại phòng</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control select_lp"  name="ma_loai_phong" id="ma_loai_phong">
+                                                        <option value="" >Chọn Loại phòng</option>
+                                                        <?php
 include "conn.php";
 $select = "select * from loaiphong";
 $query = mysqli_query($conn, $select);
@@ -61,23 +61,23 @@ if ($num > 0) {
 	echo "<option value=''>k co du lieu</option>";
 }
 ?>
-                                        </select>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-success  " onclick="themtbmoi();">Thêm phòng</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-success  " onclick="themtbmoi();">Thêm phòng</button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
                     </div>
                     <hr class="ngay_ad">
                     <div class="container-fluid noidungthaydoi">
                         <div class="row thaydoi1 text-center"><!-- nho doi ten class -->
-                            <div class="dlphong" id="dlphong"><?php include 'qlphong.php';?></div>
+                        <div class="dlphong" id="dlphong"><?php include 'qlphong.php';?></div>
                         </div><!-- end thaydoi1 -->
                         </div><!-- end noidungthaydoi -->
                         </div> <!-- end col-9 -->
@@ -87,3 +87,74 @@ if ($num > 0) {
                 </body>
             </html>
             <!-- Modal -->
+            <!-- modal hiện thông tin chi tiết -->
+            <div id="views_phong" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Thông tin thiết bị</h4>
+                    </div>
+                    <div class="modal-body" id="employee_detail2">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Trở về</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- kết thúc modal hiện thông tin chi tiết -->
+<!-- Câp nhat lại thong tin thiêt bị -->
+        <div id="chitiet_data_Modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Cập nhật thông tin Phòng</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" id="insert_form" data-confirm="Bạn có chắn muốn cập nhật lại thông tin này?">
+                            <label>Mã Phòng</label>
+                            <input disabled type="text" name="ma_phong_sua" id="ma_phong_sua" class="form-control "style="text-transform: uppercase;" />
+                            <br />
+                            <label>Tên Phòng</label>
+                            <textarea  name="ten_loai_phong_sua" id="ten_loai_phong_sua" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                            <br />
+                            <input type="hidden" name="mathietbi_sua_1" id="mathietbi_sua_1" />
+                            <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
+                            <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-danger capnhattb" />
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Trở lại</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Xoa thiêt bị -->
+        <div id="xoa_data_Modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Xóa thiết bị</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" id="xoa_tb_form" data-confirm="Bạn có chắn muốn xóa thông tin này?">
+                            <label>Mã thiết bị</label>
+                            <input disabled type="text" name="ma_tb_xoa" id="ma_tb_xoa" class="form-control "style="text-transform: uppercase;" />
+                            <br />
+                            <label>Tên thiết bị</label>
+                            <input disabled type="text" name="ten_tb_xoa" id="ten_tb_xoa" class="form-control "style="text-transform: capitalize;" />
+                            <br>
+                            <input type="hidden" name="mathietbi_xoa_2" id="mathietbi_xoa_2" />
+                            <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
+                            <input type="submit" name="insert1" id="insert1" value="Insert" class="btn btn-danger"  />
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Trở lại</button>
+                    </div>
+                </div>
+            </div>
+        </div>

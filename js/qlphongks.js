@@ -49,3 +49,72 @@
     }
   }
 };
+//xử lý xem, sữa, xóa phong
+// xem chi tiết phòng
+$(document).ready(function(){
+        // nhấn nút edit hiện thông tin sưa
+      $(document).on('click', '.chitiet_phong', function(){
+           var ma_phong_chitiet = $(this).attr("id");
+           $.ajax({
+              url:"./select.php",
+              method:"POST",
+              data:{ma_phong_chitiet:ma_phong_chitiet},
+              success:function(data123){
+                $('#employee_detail2').html(data123);
+                $('#views_phong').modal('show');
+              }
+            });
+      });
+  });
+//kết thúc xử lý xem chi tiết phòng
+// cập nhật lại thông tin phòng
+$(document).on('click', '.sua_phong', function(){
+           var ma_phong_sua = $(this).attr("id");
+           $.ajax({
+                url:"./fetch.php",
+                method:"POST",
+                data:{ma_phong_sua:ma_phong_sua},
+                dataType:"json",
+                success:function(data){
+                    $('#ma_phong_sua').val(data.MA_PHONG);
+                    $('#ten_loai_phong_sua').val(data.TEN_LOAI_PHONG);
+                    $('#ma_phong_sua_1').val(data.MA_PHONG);
+                    
+                    $('#insert').val("Cập nhật");
+                    $('#chitiet_data_Modal').modal('show');
+                }
+
+           });
+      });
+     
+      // cap nhat tt thiết bi
+      // $('#insert_form').on('submit', function(event){
+      //     event.preventDefault();
+      //     if ($('#ten_thiebi').val()=='') {
+      //       alert('Chưa nhập tên thiết bị');
+      //     }else {
+      //         $.ajax({
+      //                url:"../dulieu/insert.php",
+      //                method:"POST",
+      //                data:$('#insert_form').serialize(),
+      //                success:function(data123){
+      //                   if (data123==1) {
+      //                       alert('Tên thiết bị đã tồn tại');
+      //                       $('#ten_thiebi').addClass('vien_do');
+      //                   }else {
+      //                      $('#ten_thiebi').removeClass('vien_do');
+      //                       if (data123==99) {
+      //                           alert('Cập nhật thông tin thiết bị thành công');
+      //                           $('#ten_thiebi').removeClass('vien_do');
+      //                           $('#insert_form')[0].reset();
+      //                           $('#add_data_Modal').modal('hide');
+      //                           $('#dl_tb1').load('../dulieu/dl_thietbi.php');
+      //                        }else {
+      //                           alert('Lỗi cập nhật');
+      //                       }
+
+      //                   }
+      //               }
+      //           });
+      //       }
+      // });
