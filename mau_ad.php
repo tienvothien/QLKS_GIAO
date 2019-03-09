@@ -4,7 +4,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en"><head>
-    <title> Hệ Thống Quản Lý Khách Sạn</title>
+    <title> Hệ thông KTX ĐH Kiên Giang </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="./vendor/bootstrap.js"></script>
@@ -22,7 +22,7 @@ session_start();
                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 benphai">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 chutieude">
-                            <h2>Thống kê danh sách phòng  </h2>
+                            <h2>Quản lý tài khoản</h2>
                         </div>
 
                     </div>
