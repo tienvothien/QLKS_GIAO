@@ -1,0 +1,49 @@
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+    background-color: white;
+}
+.thumbnail{
+    background-color: #55a4e8
+}
+.btn-primary{
+    float:right;
+    width: 150px;
+    margin-right: 5px;
+}
+.btn-success{
+    float:right;
+    width: 150px;
+    width: 150px;
+}
+
+button.btn.btn-success.nutnek {
+    width: 53px;
+    /* margin: 5px; */
+}
+.form-control{
+    width:30%;
+    margin-top:5px;
+    width: 70%;
+}
+.btn-group-lg>.btn, .btn-lg{
+    float:right;
+    width: 61px;
+}
+.modal-dialog.modal-sm.themphong{
+    width:500px
+}
+.form-control{
+    width:70%;
+}
+.modal-footer .btn+.btn {
+    float:left;
+    width: 25%;
+}
+.btn-group-lg>.btn, .btn-lg{
+    width:60px;
+}
+
+button.btn.btn-info.btn-lg.nutthemnek {
+    width: auto;
+    /* margin-right: 50px; */
+}
