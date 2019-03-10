@@ -26,6 +26,7 @@ session_start();
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-right ">
                             <button type="button" class="btn btn-info btn-lg nutthemnek " data-toggle="modal" data-target="#myModal">Thêm phòng</button>
                         </div>
+                        <!-- hiện modal them phonf -->
                         <div class="modal fade " id="myModal" role="dialog">
                             <div class="modal-dialog modal-sm themphong">
                                 <div class="modal-content">
@@ -47,20 +48,20 @@ session_start();
                                                     <select class="form-control select_lp"  name="ma_loai_phong" id="ma_loai_phong">
                                                         <option value="" >Chọn Loại phòng</option>
                                                         <?php
-include "conn.php";
-$select = "select * from loaiphong";
-$query = mysqli_query($conn, $select);
-$num = mysqli_num_rows($query);
-if ($num > 0) {
-	while ($row = mysqli_fetch_array($query)) {
-		$MA_LOAI_PHONG = $row['MA_LOAI_PHONG'];
-		$TEN_LOAI_PHONG = $row['TEN_LOAI_PHONG'];
-		echo "<option value='$MA_LOAI_PHONG'>$TEN_LOAI_PHONG</option>";
-	}
-} else {
-	echo "<option value=''>k co du lieu</option>";
-}
-?>
+                                                            include "conn.php";
+                                                            $select = "select * from loaiphong";
+                                                            $query = mysqli_query($conn, $select);
+                                                            $num = mysqli_num_rows($query);
+                                                            if ($num > 0) {
+                                                            	while ($row = mysqli_fetch_array($query)) {
+                                                            		$MA_LOAI_PHONG = $row['MA_LOAI_PHONG'];
+                                                            		$TEN_LOAI_PHONG = $row['TEN_LOAI_PHONG'];
+                                                            		echo "<option value='$MA_LOAI_PHONG'>$TEN_LOAI_PHONG</option>";
+                                                            	}
+                                                            } else {
+                                                            	echo "<option value=''>k co du lieu</option>";
+                                                            }
+                                                            ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -73,11 +74,14 @@ if ($num > 0) {
                                 </div>
                             </div>
                         </div>
+                        <!-- ket thuc modal them -->
                     </div>
                     <hr class="ngay_ad">
                     <div class="container-fluid noidungthaydoi">
                         <div class="row thaydoi1 text-center"><!-- nho doi ten class -->
-                        <div class="dlphong" id="dlphong"><?php include 'qlphong.php';?></div>
+                            <!-- nội dung thay đổi-->
+                        <div class="dlphong" id="dlphong"><?php include 'dlphong.php';?></div>
+                        <!-- kết thúc nội dung thay dổi -->
                         </div><!-- end thaydoi1 -->
                         </div><!-- end noidungthaydoi -->
                         </div> <!-- end col-9 -->

@@ -12,7 +12,7 @@
 			</button>
 			<div class="dropdown-container">
 				<a href="qlphongks.php" class="list-group-item">Danh sách phòng</a>
-				<a href="#" class="list-group-item">Thiết bị</a>
+				<a href="qlthietbi.php" class="list-group-item">Thiết bị</a>
 			</div>
 			<button class="dropdown-btn">Quản lý đặt phòng
 			<i class="fa fa-caret-down"></i>
@@ -28,6 +28,7 @@
 			</div>
 			<a href="qlcanbo.php" class="list-group-item">Quản lý hóa đơn</a>
 			<a href="qlcanbo.php" class="list-group-item">Thống kê</a>
+			<a href="ql_nhanvien.php" class="list-group-item">QL nhân viên</a>
 
 		</div>
 	</div>

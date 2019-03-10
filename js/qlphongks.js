@@ -34,7 +34,7 @@
             }else{
               if (data123==99) {
                 alert("Thêm phòng thành công");
-                $('#dlphong').load('./qlphong.php');
+                $('#dlphong').load('./dlphong.php');
               }
             }         
           }
@@ -159,7 +159,7 @@ $(document).on('click', '.sua_phong', function(){
                     alert('Xóa phòng thành công');
                     $('#xoa_phong_form')[0].reset();
                     $('#xoa_maphong_data_Modal').modal('hide');
-                    $('#dlphong').load('./qlphong.php');
+                    $('#dlphong').load('./dlphong.php');
                   }else {
                     alert('Lỗi xóa phòng lỗi');
                   }

@@ -1,9 +1,10 @@
 
 <?php
+//them phong mời
 if (isset($_POST['ma_phong_them1'])) {
 	include 'conn.php';
 	// kiêm tra ma phong đã tồng tại chưa
-	$kt_maphong = mysqli_query($conn, "SELECT * FROM phong WHERE xoa =0 and MA_PHONG = '" . $_POST['ma_phong_them1'] . "'");
+	$kt_maphong = mysqli_query($conn, "SELECT * FROM phong WHERE MA_PHONG = '" . $_POST['ma_phong_them1'] . "'");
 	if (mysqli_num_rows($kt_maphong)) {
 		echo "1";
 	} else {

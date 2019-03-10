@@ -1,4 +1,6 @@
 /* Fixed sidenav, full height */
+*{ padding: 0px;
+margin: 0px }
 .sidenav {
   height: 100%;
   width: 270px;
@@ -104,7 +106,8 @@ button.btn.btn-success.nutnek {
     width: 25%;
 }
 .btn-group-lg>.btn, .btn-lg{
-    width:60px;
+    width: 100px;
+    text-align: center;
 }
 
 button.btn.btn-info.btn-lg.nutthemnek {
@@ -121,4 +124,14 @@ button.btn.btn-info.btn-lg.nutthemnek {
 .vienxanh{
     border-color: blue;
     color: black;
+}
+div#xoa_maphong_data_Modal .modal-dialog{
+  background-color:red
+}
+element.style {
+  text-align:center;
+}
+
+element.style{
+  text-align:center;
 }
