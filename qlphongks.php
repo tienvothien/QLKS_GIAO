@@ -17,11 +17,12 @@ session_start();
         <br>
         <div class="container-fluid">
             <div class="row">
+                <?php include 'menutren.php';?>
                 <?php include 'menutrai.php';?>
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 benphai">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 chutieude">
-                            <h2>Thống kê danh sách phòng  </h2>
+                            <h2>Danh sách phòng  </h2>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-right ">
                             <button type="button" class="btn btn-info btn-lg nutthemnek " data-toggle="modal" data-target="#myModal">Thêm phòng</button>
@@ -97,7 +98,7 @@ session_start();
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Thông tin thiết bị</h4>
+                        <h4 class="modal-title">Chi tiết về phòng</h4>
                     </div>
                     <div class="modal-body" id="employee_detail2">
                     </div>
@@ -141,7 +142,7 @@ session_start();
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Xóa thiết bị</h4>
+                        <h4 class="modal-title">Xóa phòng</h4>
                     </div>
                     <div class="modal-body">
                         <form method="post" id="xoa_phong_form" data-confirm="Bạn có chắn muốn xóa thông tin này?">
@@ -149,11 +150,11 @@ session_start();
                             <input disabled type="text" name="ma_phong_xoa_2" id="ma_phong_xoa_2" class="form-control "style="text-transform: uppercase;" />
                             <br />
                             <label>Tên Phòng</label>
-                            <textarea disabled=""  name="ten_loai_phong_xoa_2" id="ten_loai_phong_xoa_2" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                            <textarea disabled=""  name="ten_loai_phong_xoa_2" id="ten_loai_phong_xoa_2" class="forsm-control" rows="1" style=" text-transform: capitalize;"></textarea>
                             <br />
                             <input type="hidden" name="maphong_xoa_2" id="maphong_xoa_2" />
                             <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
-                            <input type="submit" name="insert1" id="insert1" value="Insert" class="btn btn-danger"  />
+                            <input type="submit" name="insert1" id="insert1" value="Xóa" class="btn btn-danger"  />
                         </form>
                     </div>
                     <div class="modal-footer">

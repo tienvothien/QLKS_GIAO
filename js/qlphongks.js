@@ -12,7 +12,7 @@
       if ($('#ma_loai_phong').val()=='') {
         $('#ma_loai_phong').removeClass('vienxanh');
         $('#ma_loai_phong').addClass('viendo');
-        alert('Chưa nhập mã phòng');
+        alert('Chưa chọn loại phòng');
       }else{
         $('#ma_loai_phong').removeClass('viendo');
         $('#ma_loai_phong').addClass('vienxanh');
@@ -20,7 +20,7 @@
         var ma_phong_them1= $('#ma_phong_them1').val()
         var ma_loai_phong= $('#ma_loai_phong').val()
         $.ajax({
-          url:"./insert.php",
+          url:"./insert_phong.php",
           method:"POST",
           data:{
             ma_phong_them1:ma_phong_them1,
@@ -151,7 +151,7 @@ $(document).on('click', '.sua_phong', function(){
           // alert(maphong_xoa_2);
               event.preventDefault();
               $.ajax({
-                url:"./insert.php",
+                url:"./insert_phong.php",
                 method:"POST",
                 data:{maphong_xoa_2:maphong_xoa_2},
                 success:function(data129){

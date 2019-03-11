@@ -27,6 +27,10 @@ if (isset($_POST["ma_phong_chitiet"])) {
                      <td width="30%"><label>SỐ người ở</label></td>
                      <td width="70%" style=" text-transform: capitalize;">' . $row["SL_NGUOI_O"] . '</td>
                 </tr>
+                <tr>
+                     <td width="30%"><label>Video</label></td>
+                     <td width="70%" height="100px" style=" text-transform: capitalize;">' . $row["VIDEO"] . ' <iframe src="https://www.youtube.com/embed/g_ipmHUHxgc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                </tr>
 
 
 

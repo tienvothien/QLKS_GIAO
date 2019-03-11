@@ -18,21 +18,23 @@ session_start();
         <br>
         <div class="container-fluid">
             <div class="row">
+                <?php include 'menutren.php';?>
                 <?php include 'menutrai.php';?>
                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 benphai">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 chutieude">
                             <h2>Quản lý nhân viên</h2>
                         </div>
-
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-right ">
+                            <button type="button" class="btn btn-info btn-lg nutthemnek " data-toggle="modal" data-target="#myModal">Thêm phòng</button>
+                        </div>
                     </div>
                     <hr class="ngay_ad">
                     <div class="container-fluid noidungthaydoi">
-                        <div class="row thaydoi1 text-center"><!-- nho doi ten class -->
+                        <div class="row thaydoi1 text-center">
+                            <!-- nho doi ten class -->
                             <div id="dl_nhanvienks"><?php include 'dl_nhanvienks.php'; ?></div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-right ">
-                            <button type="button" class="btn btn-info btn-lg nutthemnek " data-toggle="modal" data-target="#myModal">Thêm phòng</button>
-                        </div>
+                            
                         <!-- hiện modal them phonf -->
                         <div class="modal fade " id="myModal" role="dialog">
                             <div class="modal-dialog modal-sm themphong">

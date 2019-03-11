@@ -102,8 +102,8 @@
                   }
                   else{
                      echo "<script>
-                              alert('Đăng nhập thất bại');
-                            </script>";
+  alert('Đăng nhập thất bại');
+</script>";
                     
                   }
                 }

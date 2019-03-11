@@ -68,37 +68,50 @@
                   $('#sdt_nhanvien_them1').addClass('viendo');
                   $('#sdt_nhanvien_them1').removeClass('vienxanh');
                   alert('Độ dài sdt sai ( Phải đủ 10 ký tự)');
-            }
-
+            
+          //nếu đủ dữ liệu tiến hành gọi hàm thêm phòng
+                      var ma_nhanvien_them1= $('#ma_nhanvien_them1').val()
+                      var ho_nhanvien_them1= $('#ho_nhanvien_them1').val()
+                      var ten_nhanvien_them1= $('#ten_nhanvien_them1').val()
+                      var gt_nhanvien_them1= $('#gt_nhanvien_them1').val()
+                      var ngaysinh_nhanvien_them1= $('#ngaysinh_nhanvien_them1').val()
+                      var diachi_nhanvien_them1= $('#diachi_nhanvien_them1').val()
+                      var sdt_nhanvien_them1= $('#sdt_nhanvien_them1').val()
+                      var email_nhanvien_them1= $('#email_nhanvien_them1').val()
+                      $.ajax({
+                        url:"./insert_nhanvien.php",
+                        method:"POST",
+                        data:{
+                          ma_nhanvien_them1:ma_nhanvien_them1,
+                          ho_nhanvien_them1:ho_nhanvien_them1,
+                          ten_nhanvien_them1:ten_nhanvien_them1,
+                          gt_nhanvien_them1:gt_nhanvien_them1,
+                          ngaysinh_nhanvien_them1:ngaysinh_nhanvien_them1,
+                          diachi_nhanvien_them1:diachi_nhanvien_them1,
+                          sdt_nhanvien_them1:sdt_nhanvien_them1,
+                          email_nhanvien_them1:email_nhanvien_them1
+                        },
+                        success:function(data123){
+                          if (data123==1) {
+                            $('#ma_nhanvien_them1').addClass('viendo');
+                            $('#ma_nhanvien_them1').removeClass('vienxanh');
+                            alert('Mã đã tồn tại');
+                          }else{
+                            if (data123==99) {
+                              alert("Thêm phòng thành công");
+                              $('#dlphong').load('./dlphong.php');
+                            }
+                          }         
+                        }
+                      });
+              //kết thúc code thêm dữ liệu phòng
+                  }
                 }//kết thúc ktra sdtsdt_nhanvien_them1
               }//ket thuc kiem tra địa chỉ
             }//ket thuc kiem tra ngày sinh
           }//ket thuc kiem tra gioi tính
         }// ket thuc kiem tra ten nhan vien
-        // nếu đủ dữ liệu tiến hành gọi hàm thêm phòng
-        // var ma_nhanvien_them1= $('#ma_nhanvien_them1').val()
-        // var ho_nhanvien_them1= $('#ho_nhanvien_them1').val()
-        // $.ajax({
-        //   url:"./insert.php",
-        //   method:"POST",
-        //   data:{
-        //     ma_nhanvien_them1:ma_nhanvien_them1,
-        //     ho_nhanvien_them1:ho_nhanvien_them1
-        //   },
-        //   success:function(data123){
-        //     if (data123==1) {
-        //       $('#ma_nhanvien_them1').addClass('viendo');
-        //       $('#ma_nhanvien_them1').removeClass('vienxanh');
-        //       alert('Mã đã tồn tại');
-        //     }else{
-        //       if (data123==99) {
-        //         alert("Thêm phòng thành công");
-        //         $('#dlphong').load('./dlphong.php');
-        //       }
-        //     }         
-        //   }
-        // });
-        // kết thúc code thêm dữ liệu phòng
+        
       }//ket thuc kiem tra ho nhan vien
       // két thúc kiểm tra mã loại phòng
     }else{
