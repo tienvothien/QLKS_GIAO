@@ -68,7 +68,7 @@ session_start();
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-success  " onclick="themtbmoi();">Thêm phòng</button>
+                                                <button type="submit" class="btn btn-success  " onclick="themtphongmoi();">Thêm phòng</button>
                                             </div>
                                         </form>
                                     </div>
@@ -123,7 +123,7 @@ session_start();
                             <input disabled type="text" name="ma_phong_sua" id="ma_phong_sua" class="form-control "style="text-transform: uppercase;" />
                             <br />
                             <label>Tên Phòng</label>
-                            <textarea di  name="ten_loai_phong_sua" id="ten_loai_phong_sua" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                            <textarea   name="ten_loai_phong_sua" id="ten_loai_phong_sua" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
                             <br />
                             <input type="hidden" name="ma_phong_sua_1" id="ma_phong_sua_1" />
                             <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
@@ -148,9 +148,10 @@ session_start();
                         <form method="post" id="xoa_phong_form" data-confirm="Bạn có chắn muốn xóa thông tin này?">
                             <label>Mã Phòng</label>
                             <input disabled type="text" name="ma_phong_xoa_2" id="ma_phong_xoa_2" class="form-control "style="text-transform: uppercase;" />
+                            
                             <br />
                             <label>Tên Phòng</label>
-                            <textarea disabled=""  name="ten_loai_phong_xoa_2" id="ten_loai_phong_xoa_2" class="forsm-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                            <textarea   name="ten_loai_phong_xoa_2" id="ten_loai_phong_xoa_2" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
                             <br />
                             <input type="hidden" name="maphong_xoa_2" id="maphong_xoa_2" />
                             <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />

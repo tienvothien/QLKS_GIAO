@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'ktdangnhap.php';
 
 ?>
 <!DOCTYPE html>

@@ -112,6 +112,11 @@ button.btn.btn-success.nutnek {
     float: left;
 }
 
+button.btn.btn-info.btn-lg.themtb {
+    float: none;
+    width: 150px;
+}
+
 button.btn.btn-info.btn-lg.nutthemnek {
     width: auto;
     /* margin-right: 50px; */
@@ -151,4 +156,7 @@ margin-left: 14px;
   width:65px;
   height:40px;
   font-size:15px;
+}
+button.btn.btn-info.btn-lg.themtb{
+  width:150px;
 }

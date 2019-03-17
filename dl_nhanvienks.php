@@ -38,7 +38,7 @@ if (mysqli_num_rows($dl1)) {
 				";?> 	
 					<!-- Sửa -->
 					<td>
-					<button type="button" class="btn btn-info btn-lg sua" data-toggle="modal" data-target="#myModal">Sửa</button>
+					<button type="button" class="btn btn-info btn-lg sua" >Sửa</button>
 
   						<!-- Modal -->
 						  <div class="modal fade" id="myModal sua" role="dialog">
@@ -63,28 +63,9 @@ if (mysqli_num_rows($dl1)) {
 					</td>
 					<!-- Xóa -->
 					<td>
-					<button type="button" class="btn btn-info btn-lg xoa" data-toggle="modal" data-target="#myModal">Xóa</button>
+					<button type="button" class="btn btn-info btn-lg xoa">Xóa</button>
 
-  						<!-- Modal -->
-						  <div class="modal fade" id="myModal xoa" role="dialog">
-						    <div class="modal-dialog">
-						    
-						      <!-- Modal content-->
-						      <div class="modal-content">
-						        <div class="modal-header">
-						          <button type="button" class="close" data-dismiss="modal">&times;</button>
-						          <h4 class="modal-title">Xóa thông tin nhân viên</h4>
-						        </div>
-						        <div class="modal-body">
-						          <p>Some text in the modal.</p>
-						        </div>
-						        <div class="modal-footer">
-						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						        </div>
-						      </div>
-						      
-						    </div>
-						  </div>
+  						
 					</td>
 					<!-- <td><button type="button" class="btn btn-info nutnek xoaphong" id="<?php echo $row['MA_NV']; ?>">Xóa</button></td>
 					<td><button type="button" class="btn btn-info sua_phong " id="<?php echo $row['MA_NV']; ?>" >Sửa</button></td> -->

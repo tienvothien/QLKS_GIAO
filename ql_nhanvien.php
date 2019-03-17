@@ -26,7 +26,7 @@ session_start();
                             <h2>Quản lý nhân viên</h2>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-right ">
-                            <button type="button" class="btn btn-info btn-lg nutthemnek " data-toggle="modal" data-target="#myModal">Thêm phòng</button>
+                            <button type="button" class="btn btn-info btn-lg nutthemnek " data-toggle="modal" data-target="#myModal">Thêm</button>
                         </div>
                     </div>
                     <hr class="ngay_ad">
@@ -100,7 +100,7 @@ session_start();
 
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-success  " onclick="themnhanvienbmoi();">Thêm phòng</button>
+                                                <button type="submit" class="btn btn-success  " onclick="themnhanvienbmoi();">Thêm </button>
                                             </div>
                                         </form>
                                     </div>

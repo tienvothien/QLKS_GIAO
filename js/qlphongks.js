@@ -1,4 +1,4 @@
- function themtbmoi(){ // them phong mới vào
+ function themtphongmoi(){ // them phong mới vào
   event.preventDefault();
   if ($('#ma_phong_them1').val()=='') {
     $('#ma_phong_them1').addClass('viendo');
@@ -168,3 +168,4 @@ $(document).on('click', '.sua_phong', function(){
         }
       }
     });
+      

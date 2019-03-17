@@ -1,3 +1,6 @@
+<div class="nutdn" style="float: right; font-size: 20px; margin-right: 15px">
+    <a href="./login/index.php" title="">Đăng nhập</a>/<a href="./login/dangxuat.php" title="">Đăng xuất</a>
+</div>
 
         <div class="container-fluid">
             <div class="row">

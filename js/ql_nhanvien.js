@@ -29,6 +29,7 @@
           if ($('#gt_nhanvien_them1').val()=='') {
             $('#gt_nhanvien_them1').removeClass('vienxanh');
             $('#gt_nhanvien_them1').addClass('viendo');
+            alert('Chưa chọn giới tính nhân viên');
           }else{
             $('#gt_nhanvien_them1').removeClass('viendo');
             $('#gt_nhanvien_them1').addClass('vienxanh');
@@ -36,6 +37,7 @@
           if ($('#ngaysinh_nhanvien_them1').val()=='') {
             $('#ngaysinh_nhanvien_them1').removeClass('vienxanh');
             $('#ngaysinh_nhanvien_them1').addClass('viendo');
+            alert('Chưa chọn ngày sinh nhân viên');
           }else{
             $('#ngaysinh_nhanvien_them1').removeClass('viendo');
             $('#ngaysinh_nhanvien_them1').addClass('vienxanh');
@@ -43,6 +45,7 @@
           if ($('#diachi_nhanvien_them1').val()=='') {
             $('#diachi_nhanvien_them1').removeClass('vienxanh');
             $('#diachi_nhanvien_them1').addClass('viendo');
+            alert('Chưa nhập địa chỉ nhân viên');
           }else{
             $('#diachi_nhanvien_them1').removeClass('viendo');
             $('#diachi_nhanvien_them1').addClass('vienxanh');
@@ -50,26 +53,20 @@
           if ($('#sdt_nhanvien_them1').val()=='') {
             $('#sdt_nhanvien_them1').addClass('viendo');
             $('#sdt_nhanvien_them1').removeClass('vienxanh');
-            alert('Chưa nhập mã nhân viên');
+            alert('Chưa nhập sdt nhân viên');
           }else{
             if ($('#sdt_nhanvien_them1').val().length==10) {
               $('#sdt_nhanvien_them1').removeClass('viendo');
               $('#sdt_nhanvien_them1').addClass('vienxanh');
-          //Kiểm tra email
-          if ($('#email_nhanvien_them1').val()=='') {
-            $('#email_nhanvien_them1').addClass('viendo');
-            $('#email_nhanvien_them1').removeClass('vienxanh');
-            alert('Chưa nhập email nhân viên');
-          }else{
-            $('#email_nhanvien_them1').removeClass('viendo');
-            $('#email_nhanvien_them1').addClass('vienxanh');
-          }
-            }else{
-                  $('#sdt_nhanvien_them1').addClass('viendo');
-                  $('#sdt_nhanvien_them1').removeClass('vienxanh');
-                  alert('Độ dài sdt sai ( Phải đủ 10 ký tự)');
-            
-          //nếu đủ dữ liệu tiến hành gọi hàm thêm phòng
+              //Kiểm tra email
+              if ($('#email_nhanvien_them1').val()=='') {
+                $('#email_nhanvien_them1').addClass('viendo');
+                $('#email_nhanvien_them1').removeClass('vienxanh');
+                alert('Chưa nhập email nhân viên');
+              }else{
+                $('#email_nhanvien_them1').removeClass('viendo');
+                $('#email_nhanvien_them1').addClass('vienxanh');
+                 //nếu đủ dữ liệu tiến hành gọi hàm thêm phòng
                       var ma_nhanvien_them1= $('#ma_nhanvien_them1').val()
                       var ho_nhanvien_them1= $('#ho_nhanvien_them1').val()
                       var ten_nhanvien_them1= $('#ten_nhanvien_them1').val()
@@ -79,7 +76,7 @@
                       var sdt_nhanvien_them1= $('#sdt_nhanvien_them1').val()
                       var email_nhanvien_them1= $('#email_nhanvien_them1').val()
                       $.ajax({
-                        url:"./insert_nhanvien.php",
+                        url:"./themnhanvien.php",
                         method:"POST",
                         data:{
                           ma_nhanvien_them1:ma_nhanvien_them1,
@@ -91,20 +88,29 @@
                           sdt_nhanvien_them1:sdt_nhanvien_them1,
                           email_nhanvien_them1:email_nhanvien_them1
                         },
-                        success:function(data123){
-                          if (data123==1) {
+                        success:function(data1234){
+                          alert(data1234);
+
+                          if (data1234==1) {
                             $('#ma_nhanvien_them1').addClass('viendo');
                             $('#ma_nhanvien_them1').removeClass('vienxanh');
                             alert('Mã đã tồn tại');
                           }else{
-                            if (data123==99) {
-                              alert("Thêm phòng thành công");
-                              $('#dlphong').load('./dlphong.php');
+                            if (data1234==999) {
+                              alert("Thêm nhân viên thành công");
+                              $('#dlnhanvienks').load('./dlnhanvienks.php');
                             }
                           }         
                         }
                       });
               //kết thúc code thêm dữ liệu phòng
+              }
+            }else{
+                  $('#sdt_nhanvien_them1').addClass('viendo');
+                  $('#sdt_nhanvien_them1').removeClass('vienxanh');
+                  alert('Độ dài sdt sai ( Phải đủ 10 ký tự)');
+            
+
                   }
                 }//kết thúc ktra sdtsdt_nhanvien_them1
               }//ket thuc kiem tra địa chỉ

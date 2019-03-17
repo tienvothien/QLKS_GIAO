@@ -3,10 +3,10 @@
 		<div class="sidenav menutrai1">
 			<a href="index.php" class="list-group-item text-center"><span class="fa fa-home"></span>Trang chủ</a>
 
-			<div class="dropdown-container">
-				<a href="qltaikhoan.php" class="list-group-item">Quản lý tài khoản</a>
+			<!-- <div class="dropdown-container">
+				<a href="#" class="list-group-item">Quản lý tài khoản</a>
 				<a href="../dulieu/xldangxuat.php""><span class="glyphicon glyphicon-log-in"></span> Đăng xuất</a>
-			</div>
+			</div> -->
 			<a href="ql_nhanvien.php" class="list-group-item">Quản lý nhân viên</a>
 			<button class="dropdown-btn">Quản lý Phòng
 			<i class="fa fa-caret-down"></i>
@@ -27,8 +27,9 @@
 			<div class="dropdown-container">
 				<a href="" class="list-group-item">Thêm thông tin khách thuê phòng</a>
 			</div>
-			<a href="qlcanbo.php" class="list-group-item">Quản lý hóa đơn</a>
-			<a href="qlcanbo.php" class="list-group-item">Thống kê</a>
+		
+			<a href="#" class="list-group-item">Quản lý hóa đơn</a>
+			<a href="#" class="list-group-item">Thống kê</a>
 			
 
 		</div>
