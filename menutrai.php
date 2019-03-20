@@ -13,7 +13,8 @@
 			</button>
 			<div class="dropdown-container">
 				<a href="qlphongks.php" class="list-group-item">Danh sách phòng</a>
-				<a href="qlthietbi.php" class="list-group-item">Thiết bị</a>
+				<a href="qlthietbi.php" class="list-group-item">Danh sách thiết bị</a>
+				<a href="themtb.php" class="list-group-item">Quản lý thiết bị</a>
 			</div>
 			<button class="dropdown-btn">Quản lý đặt phòng
 			<i class="fa fa-caret-down"></i>

@@ -1,10 +1,10 @@
                     <?php 
                         include("conn.php");
-                    $sql= "SELECT * FROM  loaithietbi ";
+                    $sql= "SELECT * FROM  loaithietbi where xoa =0 ";
                     $query=mysqli_query($conn,$sql);
                     // $num=mysql_num_rows($query);
                 
-                            echo"<table class='table table-bordered'>
+                            echo"<table class='table table-bordered table-responsive dlthietbi'>
                                 <tr>
                                     <th>STT</th>
                                     <th>Mã loại thiết bị</th>
@@ -25,7 +25,7 @@
                                           <button type='button' class='btn btn-info btn-lg1' onclick='themcapnhat();'>Cập nhật</button>
                                         </td>
                                         <td>
-                                             <button type='button' class='btn btn-info btn-lg1' onclick='nutxoa();'>Xóa</button>
+                                             <button type='button' class='btn btn-info btn-lg1 btn_xoatb' id=".$row['MA_LOAI_THIET_BI'].">Xóa</button>
                                         </td
                                 </tr>";
                                 $STT++;
@@ -36,3 +36,4 @@
                              
                     ?>
                      
+            

@@ -1,6 +1,18 @@
 /* Fixed sidenav, full height */
+
+
 *{ padding: 0px;
-margin: 0px }
+  margin: 0px;
+   
+}
+
+table.table.table-bordered.table-responsive.dlthietbi {
+    color: black;
+}
+
+table.table.table-bordered.table-responsive.dlthietbi th {
+    text-align: center;
+}
 .sidenav {
   height: 100%;
   width: 270px;
@@ -159,4 +171,12 @@ margin-left: 14px;
 }
 button.btn.btn-info.btn-lg.themtb{
   width:150px;
+}
+h2, .h2 {
+    font-size: 35px;
+    color: #210404;
+    float: left;
+}
+.modal-content{
+      width: 585px;
 }

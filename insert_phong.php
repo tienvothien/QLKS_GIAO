@@ -30,6 +30,18 @@ if (isset($_POST['maphong_xoa_2'])) {
 		echo "100";
 	}
 }
+// xóa loai thiet bi
+if (isset($_POST['MA_LOAI_THIET_BI_XOA12'])) {
+	include 'conn.php';
+
+	// insert dữ liệu vào cơ sơ dữ liệu
+	$update_ltb = "UPDATE loaithietbi SET XOA=1 WHERE loaithietbi.MA_LOAI_THIET_BI='$_POST[MA_LOAI_THIET_BI_XOA12]'";
+	if (mysqli_query($conn, $update_ltb)) {
+		echo "99";
+	} else {
+		echo "100";
+	}
+}
 
 ?>
 

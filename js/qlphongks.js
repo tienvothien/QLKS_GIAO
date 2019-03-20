@@ -87,38 +87,6 @@ $(document).on('click', '.sua_phong', function(){
            });
       });
      
-      // cap nhat tt thiết bi
-      // $('#insert_form').on('submit', function(event){
-      //     event.preventDefault();
-      //     if ($('#ten_thiebi').val()=='') {
-      //       alert('Chưa nhập tên thiết bị');
-      //     }else {
-      //         $.ajax({
-      //                url:"../dulieu/insert.php",
-      //                method:"POST",
-      //                data:$('#insert_form').serialize(),
-      //                success:function(data123){
-      //                   if (data123==1) {
-      //                       alert('Tên thiết bị đã tồn tại');
-      //                       $('#ten_thiebi').addClass('vien_do');
-      //                   }else {
-      //                      $('#ten_thiebi').removeClass('vien_do');
-      //                       if (data123==99) {
-      //                           alert('Cập nhật thông tin thiết bị thành công');
-      //                           $('#ten_thiebi').removeClass('vien_do');
-      //                           $('#insert_form')[0].reset();
-      //                           $('#add_data_Modal').modal('hide');
-      //                           $('#dl_tb1').load('../dulieu/dl_thietbi.php');
-      //                        }else {
-      //                           alert('Lỗi cập nhật');
-      //                       }
-
-      //                   }
-      //               }
-      //           });
-      //       }
-      // });
-
       // xoa phong
       $(document).on('click', '.xoaphong', function(){
            var ma_phong_sua = $(this).attr("id");
@@ -137,8 +105,8 @@ $(document).on('click', '.sua_phong', function(){
                 }
 
            });
-      });
-            // hiện thông báo khi bấm nút xóa
+      });      
+         // hiện thông báo khi bấm nút xóa
       $(document).on('submit', 'form[data-confirm]', function(e){
         var maphong_xoa_2 = $('#maphong_xoa_2').val();
         if (maphong_xoa_2) {
