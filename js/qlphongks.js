@@ -66,6 +66,26 @@ $(document).ready(function(){
               }
             });
       });
+      $('#sua_thongtinphong1').on('submit', function (event) {
+        event.preventDefault();
+        var malpsuawcuapchitiet=($('#ttphongsuaw_loaiphong').val());
+        var ma_phong_sua_chitietp=($('#ma_phong_sua').val());
+        $.ajax({
+          url: './insert_phong.php',
+          type: 'POST',
+          data: {malpsuawcuapchitiet: malpsuawcuapchitiet,
+            ma_phong_sua_chitietp:ma_phong_sua_chitietp},
+          success:function (dulieudacapnhat) {
+            if (dulieudacapnhat==99) {
+              alert('Sữa thành công');
+            }else{
+              alert('Lỗi cập nhật');
+              $('#chitiet_data_Modal').modal('hide');
+               $('#dlphong').load('./dlphong.php');
+            }
+          }
+        });
+      });
   });
 //kết thúc xử lý xem chi tiết phòng
 // cập nhật lại thông tin phòng
@@ -78,7 +98,8 @@ $(document).on('click', '.sua_phong', function(){
                 dataType:"json",
                 success:function(data){
                     $('#ma_phong_sua').val(data.MA_PHONG);
-                    $('#ten_loai_phong_sua').val(data.TEN_LOAI_PHONG);
+                    $('#dlphongsua_ttchitiep').html(data.TEN_LOAI_PHONG);
+                    $('#dlphongsua_ttchitiep').val(data.MA_LOAI_PHONG);
                     $('#ma_phong_sua_1').val(data.MA_PHONG);
                     
                     $('#insert').val("Cập nhật");
