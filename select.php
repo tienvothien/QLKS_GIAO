@@ -82,6 +82,7 @@ if (isset($_POST["matblp_chitiet"])) {
                 <tr>
                      <td style=" text-transform: capitalize; text-align:center;">'.$so1.'</td>
                      <td style=" text-transform: capitalize;">' . $row["TEN_LOAI_THIET_BI"] . '</td>
+                     
                 </tr>
            ';
            $so1++;
