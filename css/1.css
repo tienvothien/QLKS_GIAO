@@ -129,10 +129,12 @@ button.btn.btn-info.btn-lg.themtb {
     width: 150px;
 }
 
-button.btn.btn-info.btn-lg.nutthemnek {
+button.btn.btn-info.btn-lg.nutthemnek,input.btn.btn-success.nutthemnek.btn-lg {
     width: auto;
     /* margin-right: 50px; */
     float: right;
+    margin-right: 10px;
+    /* padding-right: 72px; */
 }
 .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover{
     color: black;

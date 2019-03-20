@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'ktdangnhap.php';
 ?>
 <!DOCTYPE html>
 <html lang="en"><head>
@@ -26,6 +26,9 @@ session_start();
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-right ">
                             <button type="button" class="btn btn-info btn-lg nutthemnek " data-toggle="modal" data-target="#myModal">Thêm phòng</button>
+                            <form action="xuat_excel.php" method="POST" accept-charset="utf-8">
+                                <input type="submit" class="btn  btn-success nutthemnek btn-lg" name="xuatdanhsachphong12" value="Xuất Excel">
+                            </form>
                         </div>
                         <!-- hiện modal them phonf -->
                         <div class="modal fade " id="myModal" role="dialog">
