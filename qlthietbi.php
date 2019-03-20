@@ -19,126 +19,112 @@ include 'ktdangnhap.php';
             <div class="row">
                 <?php include 'menutren.php';?>
                 <?php include 'menutrai.php';?>
-               <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 benphai">
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 benphai">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 chutieude">
                             <h2>Danh sách thiết bị</h2>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-right" >
-
-
-
-                                        <button type="button" class="btn btn-info btn-lg themtb" data-toggle="modal" data-target="#myModal">Thêm</button>
-
-                                             <div class="modal fade" id="myModal" role="dialog">
-                                            <div class="modal-dialog">
-
-
-                                              <div class="modal-content">
-                                                <div class="modal-header">
-                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">Thêm loại thiết bị</h4>
+                            <button type="button" class="btn btn-info btn-lg nutthemnek themtb" data-toggle="modal" data-target="#myModal">Thêm</button>
+                            <form action="xuat_excel.php" method="POST" accept-charset="utf-8">
+                                <input type="submit" class="btn  btn-success nutthemnek btn-lg" name="xuatfile_danhsachthietbiphong" value="Xuất Excel">
+                            </form>
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Thêm loại thiết bị</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form style="font-size: 20px; margin: auto;" class="form-horizontal" action="themthietbi.php">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-4" for="email">Mã loại thiết bị</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control " id="them_ma_tb"  placeholder="Nhập mã loại thiết bị" name="mathietbi">
+                                                    </div>
                                                 </div>
-                                                <div class="modal-body">
-
-                                                    <form style="font-size: 20px; margin: auto;" class="form-horizontal" action="themthietbi.php">
-                                                        <div class="form-group">
-                                                          <label class="control-label col-sm-4" for="email">Mã loại thiết bị</label>
-                                                          <div class="col-sm-8">
-                                                            <input type="text" class="form-control " id="them_ma_tb"  placeholder="Nhập mã loại thiết bị" name="mathietbi">
-                                                          </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                          <label class="control-label col-sm-4" for="pwd">Tên loại thiết bị</label>
-                                                          <div class="col-sm-8">
-                                                            <input type="text" class="form-control" id="them_loai_tb" placeholder="Nhập tên loại thiết bị" name="tenthietbi">
-                                                          </div>
-                                                        </div>
-
-                                                    </form>
-
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-4" for="pwd">Tên loại thiết bị</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control" id="them_loai_tb" placeholder="Nhập tên loại thiết bị" name="tenthietbi">
+                                                    </div>
                                                 </div>
-                                                <div class="modal-footer">
-                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                  <button type="submit" class="btn btn-success  " onclick="themtb();">Thêm</button>
-                                                </div>
-                                              </div>
-
-                                            </div>
-                                          </div>
-
-
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-success  " onclick="themtb();">Thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
                     <div class="container-fluid noidungthaydoi">
                         <div class="row thaydoi1 text-center"><!-- nho doi ten class -->
-                            <!-- phan62 noi65 duung -->
-                                <div id="dlthietbi"><?php include 'dlthietbi.php';?></div>
-
-                                                           <!-- ket thuc noi dung -->
+                        <!-- phan62 noi65 duung -->
+                        <div id="dlthietbi"><?php include 'dlthietbi.php';?></div>
+                        <!-- ket thuc noi dung -->
                         </div><!-- end thaydoi1 -->
-                    </div><!-- end noidungthaydoi -->
-                </div> <!-- end col-9 -->
-            </div> <!-- end row noi dung -->
-        </div>
-    </div> <!-- end trang admin -->
-</body>
-</html>
-
-<!-- Câp nhat lại thong tin thiêt bị -->
-        <div id="chitiet_data_Modal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Cập nhật thông tin Phòng</h4>
+                        </div><!-- end noidungthaydoi -->
+                        </div> <!-- end col-9 -->
+                        </div> <!-- end row noi dung -->
                     </div>
-                    <div class="modal-body">
-                        <form method="post" id="insert_form" data-confirm="Bạn có chắn muốn cập nhật lại thông tin này?">
-                            <label>Mã Phòng</label>
-                            <input disabled type="text" name="ma_phong_sua" id="ma_phong_sua" class="form-control "style="text-transform: uppercase;" />
-                            <br />
-                            <label>Tên Phòng</label>
-                            <textarea   name="ten_loai_phong_sua" id="ten_loai_phong_sua" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
-                            <br />
-                            <input type="hidden" name="ma_phong_sua_1" id="ma_phong_sua_1" />
-                            <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
-                            <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-danger capnhattb" />
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Trở lại</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Xoa thiêt bị -->
-        <div id="xoa_loaitb_data_Modal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Xóa loại thiết bị</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form method="post" id="xoa_ltb_form" data-confirm="Bạn có chắn muốn xóa thông tin này?">
-                            <label>Mã Loại thiết bị</label>
-                            <input disabled type="text" name="ma_loaitb_xoa_2" id="ma_loaitb_xoa_2" class="form-control "style="text-transform: uppercase;" />
-
-                            <br />
-                            <label>Tên loại thiết bị</label>
-                            <textarea disabled  name="ten_loaitb_xoa_2" id="ten_loaitb_xoa_2" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
-                            <br />
-                            <input type="hidden" name="maphong_xoa_2" id="maphong_xoa_2" />
-                            <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
-                            <input type="submit" name="insert1" id="insert1" value="Xóa" class="btn btn-danger"  />
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Trở lại</button>
+                    </div> <!-- end trang admin -->
+                </body>
+            </html>
+            <!-- Câp nhat lại thong tin thiêt bị -->
+            <div id="chitiet_data_Modal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Cập nhật thông tin Phòng</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" id="insert_form" data-confirm="Bạn có chắn muốn cập nhật lại thông tin này?">
+                                <label>Mã Phòng</label>
+                                <input disabled type="text" name="ma_phong_sua" id="ma_phong_sua" class="form-control "style="text-transform: uppercase;" />
+                                <br />
+                                <label>Tên Phòng</label>
+                                <textarea   name="ten_loai_phong_sua" id="ten_loai_phong_sua" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                                <br />
+                                <input type="hidden" name="ma_phong_sua_1" id="ma_phong_sua_1" />
+                                <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
+                                <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-danger capnhattb" />
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Trở lại</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <!-- Xoa thiêt bị -->
+            <div id="xoa_loaitb_data_Modal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Xóa loại thiết bị</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" id="xoa_ltb_form" data-confirm="Bạn có chắn muốn xóa thông tin này?">
+                                <label>Mã Loại thiết bị</label>
+                                <input disabled type="text" name="ma_loaitb_xoa_2" id="ma_loaitb_xoa_2" class="form-control "style="text-transform: uppercase;" />
+                                <br />
+                                <label>Tên loại thiết bị</label>
+                                <textarea disabled  name="ten_loaitb_xoa_2" id="ten_loaitb_xoa_2" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                                <br />
+                                <input type="hidden" name="maphong_xoa_2" id="maphong_xoa_2" />
+                                <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
+                                <input type="submit" name="insert1" id="insert1" value="Xóa" class="btn btn-danger"  />
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Trở lại</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
