@@ -64,7 +64,7 @@ if (isset($_POST["ma_phong_chitiet"])) {
 if (isset($_POST["matblp_chitiet"])) {
 	$output = '';
 	include 'conn.php';
-	$result = mysqli_query($conn, "SELECT cothietbi.MA_LOAI_PHONG,loaiphong.TEN_LOAI_PHONG, cothietbi.MA_LOAI_THIET_BI, loaithietbi.TEN_LOAI_THIET_BI FROM cothietbi, loaithietbi,loaiphong WHERE loaiphong.MA_LOAI_PHONG=cothietbi.MA_LOAI_PHONG AND loaithietbi.MA_LOAI_THIET_BI = cothietbi.MA_LOAI_THIET_BI AND cothietbi.MA_LOAI_PHONG =' $_POST[matblp_chitiet]' AND cothietbi.XOA=0");
+	$result = mysqli_query($conn, "SELECT cothietbi.MA_LOAI_PHONG,loaiphong.TEN_LOAI_PHONG, cothietbi.MA_LOAI_THIET_BI, loaithietbi.TEN_LOAI_THIET_BI FROM cothietbi, loaithietbi,loaiphong WHERE loaiphong.MA_LOAI_PHONG=cothietbi.MA_LOAI_PHONG AND loaithietbi.MA_LOAI_THIET_BI = cothietbi.MA_LOAI_THIET_BI AND cothietbi.MA_LOAI_PHONG ='$_POST[matblp_chitiet]'AND cothietbi.XOA=0");
 	if (mysqli_num_rows($result)) {
 		$output .= '
       <div class="table-responsive">

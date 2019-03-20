@@ -52,20 +52,20 @@ include 'ktdangnhap.php';
                                                     <select class="form-control select_lp"  name="ma_loai_phong" id="ma_loai_phong">
                                                         <option value="" >Chọn Loại phòng</option>
                                                         <?php
-include "conn.php";
-$select = "select * from loaiphong";
-$query = mysqli_query($conn, $select);
-$num = mysqli_num_rows($query);
-if ($num > 0) {
-	while ($row = mysqli_fetch_array($query)) {
-		$MA_LOAI_PHONG = $row['MA_LOAI_PHONG'];
-		$TEN_LOAI_PHONG = $row['TEN_LOAI_PHONG'];
-		echo "<option value='$MA_LOAI_PHONG'>$TEN_LOAI_PHONG</option>";
-	}
-} else {
-	echo "<option value=''>k co du lieu</option>";
-}
-?>
+                                                            include "conn.php";
+                                                            $select = "select * from loaiphong";
+                                                            $query = mysqli_query($conn, $select);
+                                                            $num = mysqli_num_rows($query);
+                                                            if ($num > 0) {
+                                                            	while ($row = mysqli_fetch_array($query)) {
+                                                            		$MA_LOAI_PHONG = $row['MA_LOAI_PHONG'];
+                                                            		$TEN_LOAI_PHONG = $row['TEN_LOAI_PHONG'];
+                                                            		echo "<option value='$MA_LOAI_PHONG'>$TEN_LOAI_PHONG</option>";
+                                                            	}
+                                                            } else {
+                                                            	echo "<option value=''>k co du lieu</option>";
+                                                            }
+                                                        ?>
                                                     </select>
                                                 </div>
                                             </div>
