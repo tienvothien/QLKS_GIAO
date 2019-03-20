@@ -23,8 +23,8 @@
           url:"./insert_phong.php",
           method:"POST",
           data:{
-            ma_phong_them1:ma_phong_them1,
-            ma_loai_phong:ma_loai_phong
+            ma_phong_them12:ma_phong_them1,
+            ma_loai_phong_themphong:ma_loai_phong
           },
           success:function(data123){
             if (data123==1) {
@@ -35,6 +35,7 @@
               if (data123==99) {
                 alert("Thêm phòng thành công");
                 $('#dlphong').load('./dlphong.php');
+
               }
             }         
           }
