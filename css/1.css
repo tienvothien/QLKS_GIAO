@@ -112,7 +112,7 @@ button.btn.btn-success.nutnek {
     width:500px
 }
 .form-control{
-    width:70%;
+    width: 100%;
 }
 .modal-footer .btn+.btn {
     float:left;
@@ -147,9 +147,7 @@ button.btn.btn-info.btn-lg.nutthemnek,input.btn.btn-success.nutthemnek.btn-lg {
     border-color: blue;
     color: black;
 }
-div#xoa_maphong_data_Modal .modal-dialog{
-  background-color:red
-}
+
 .img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img{
   
 height: 250px;

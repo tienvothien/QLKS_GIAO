@@ -59,3 +59,13 @@ if (isset($_POST['ma_loai_phong'])) {
 		}
 	}
 }
+if (isset($_POST['ma_phong_sua_chitietp']) && isset($_POST['malpsuawcuapchitiet'])) {
+	include 'conn.php';
+	$capnhat = "UPDATE phong SET MA_LOAI_PHONG='" . $_POST['malpsuawcuapchitiet'] . "' WHERE MA_PHONG = '$_POST[ma_phong_sua_chitietp]' ";
+	if (mysqli_query($conn, $capnhat)) {
+		echo "99";
+	} else {
+		echo "100";
+	}
+
+}

@@ -52,20 +52,20 @@ include 'ktdangnhap.php';
                                                     <select class="form-control select_lp"  name="ma_loai_phong" id="ma_loai_phong">
                                                         <option value="" >Chọn Loại phòng</option>
                                                         <?php
-                                                            include "conn.php";
-                                                            $select = "select * from loaiphong";
-                                                            $query = mysqli_query($conn, $select);
-                                                            $num = mysqli_num_rows($query);
-                                                            if ($num > 0) {
-                                                            	while ($row = mysqli_fetch_array($query)) {
-                                                            		$MA_LOAI_PHONG = $row['MA_LOAI_PHONG'];
-                                                            		$TEN_LOAI_PHONG = $row['TEN_LOAI_PHONG'];
-                                                            		echo "<option value='$MA_LOAI_PHONG'>$TEN_LOAI_PHONG</option>";
-                                                            	}
-                                                            } else {
-                                                            	echo "<option value=''>k co du lieu</option>";
-                                                            }
-                                                        ?>
+include "conn.php";
+$select = "select * from loaiphong";
+$query = mysqli_query($conn, $select);
+$num = mysqli_num_rows($query);
+if ($num > 0) {
+	while ($row = mysqli_fetch_array($query)) {
+		$MA_LOAI_PHONG = $row['MA_LOAI_PHONG'];
+		$TEN_LOAI_PHONG = $row['TEN_LOAI_PHONG'];
+		echo "<option value='$MA_LOAI_PHONG'>$TEN_LOAI_PHONG</option>";
+	}
+} else {
+	echo "<option value=''>k co du lieu</option>";
+}
+?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -120,12 +120,22 @@ include 'ktdangnhap.php';
                         <h4 class="modal-title">Cập nhật thông tin Phòng</h4>
                     </div>
                     <div class="modal-body">
-                        <form method="post" id="insert_form" data-confirm="Bạn có chắn muốn cập nhật lại thông tin này?">
+                        <form method="post" id="sua_thongtinphong1" data-confirm="Bạn có chắn muốn cập nhật lại thông tin này?">
                             <label>Mã Phòng</label>
                             <input disabled type="text" name="ma_phong_sua" id="ma_phong_sua" class="form-control "style="text-transform: uppercase;" />
                             <br />
                             <label>Tên Phòng</label>
-                            <textarea   name="ten_loai_phong_sua" id="ten_loai_phong_sua" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                            <select name="ttphongsuaw_loaiphong" id="ttphongsuaw_loaiphong" class="form-control" required="required">
+                                <option  id="dlphongsua_ttchitiep" value=""></option>
+                                <?php
+$qr = mysqli_query($conn, "SELECT loaiphong.MA_LOAI_PHONG, loaiphong.TEN_LOAI_PHONG FROM loaiphong WHERE loaiphong.XOA = 0");
+while ($rq = mysqli_fetch_array($qr)) {
+	echo "<option   value='$rq[MA_LOAI_PHONG]'>$rq[TEN_LOAI_PHONG]</option>";
+}
+
+?>
+                            </select>
+                            <!-- <textarea   name="ten_loai_phong_sua" id="ten_loai_phong_sua" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea> -->
                             <br />
                             <input type="hidden" name="ma_phong_sua_1" id="ma_phong_sua_1" />
                             <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
@@ -153,7 +163,7 @@ include 'ktdangnhap.php';
 
                             <br />
                             <label>Tên Phòng</label>
-                            <textarea   name="ten_loai_phong_xoa_2" id="ten_loai_phong_xoa_2" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                            <textarea  disabled  name="ten_loai_phong_xoa_2" id="ten_loai_phong_xoa_2" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
                             <br />
                             <input type="hidden" name="maphong_xoa_2" id="maphong_xoa_2" />
                             <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
