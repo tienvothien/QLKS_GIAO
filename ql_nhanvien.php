@@ -29,12 +29,11 @@ session_start();
                             <button type="button" class="btn btn-info btn-lg nutthemnek " data-toggle="modal" data-target="#myModal">Thêm</button>
                         </div>
                     </div>
-                    <hr class="ngay_ad">
                     <div class="container-fluid noidungthaydoi">
                         <div class="row thaydoi1 text-center">
                             <!-- nho doi ten class -->
-                            <div id="dl_nhanvienks"><?php include 'dl_nhanvienks.php'; ?></div>
-                            
+                            <div id="dl_nhanvienks"><?php include 'dl_nhanvienks.php';?></div>
+
                         <!-- hiện modal them phonf -->
                         <div class="modal fade " id="myModal" role="dialog">
                             <div class="modal-dialog modal-sm themphong">
