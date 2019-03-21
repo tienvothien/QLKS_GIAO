@@ -80,7 +80,7 @@ $(document).ready(function(){
               alert('Sữa thành công');
             }else{
               alert('Lỗi cập nhật');
-              $('#chitiet_data_Modal').modal('hide');
+              $('#views_phong').modal('hide');
                $('#dlphong').load('./dlphong.php');
             }
           }

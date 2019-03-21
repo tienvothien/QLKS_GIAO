@@ -16,5 +16,14 @@ if (isset($_POST["MA_LOAI_THIET_BI_XOA"])) {
 	$row = mysqli_fetch_array($result);
 	echo json_encode($row);
 }
+//hiện thông  từng thiết bị trong loại hong
+if (isset($_POST["matblp_chitiet123"])) {
+
+	include 'conn.php';
+	$query = "SELECT cothietbi.idctb, loaiphong.MA_LOAI_PHONG, loaithietbi.MA_LOAI_THIET_BI, loaithietbi.TEN_LOAI_THIET_BI FROM cothietbi, loaiphong, loaithietbi WHERE cothietbi.MA_LOAI_PHONG = loaiphong.MA_LOAI_PHONG AND cothietbi.MA_LOAI_THIET_BI = loaithietbi.MA_LOAI_THIET_BI AND loaiphong.MA_LOAI_PHONG ='$_POST[matblp_chitiet123]'";
+	$result = mysqli_query($conn, $query);
+	$row = mysqli_fetch_array($result);
+	echo json_encode($row);
+}
 
 ?>
