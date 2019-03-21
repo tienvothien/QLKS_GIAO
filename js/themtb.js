@@ -60,6 +60,41 @@ $(document).on('click', '.capnhattb', function(){
 
 
   });
+// hiện thông tin suawrtb rtrong ung loại phong
+  $(document).on('click', '.sua_tbphong11', function () {
+    var matblp_chitiet123 = $(this).attr("id");
+    $.ajax({
+      url:"./select.php",
+      method:"POST",
+      data:{matblp_chitiet123:matblp_chitiet123},
+      // dataType:"json",
+      success:function(data){
+        // alert(data);
+        $('#xoatTlpemployee_detail2').html(data);
+        $('#xoatTlp').modal('show');
+      }
+    });    
+  })
+  // xử lý nút xóa của thêm thiết bị tưng loại phòng
+  $(document).on('click', '.xoathittungloaiphong', function () {
+    var matblp_chitiet123_xoa = $(this).attr("id");
+    $.ajax({
+      url:"./insert_phong.php",
+      method:"POST",
+      data:{matblp_chitiet123_xoa:matblp_chitiet123_xoa},
+      // dataType:"json",
+      success:function(data){
+        if (data==99) {
+          alert('Xóa thành công');
+          $('#xoatTlp').modal('hide');
+        }else{
+          alert('Lỗi xóa')
+        }
+        
+      }
+    });    
+  })
+
 
 
 // them thiết bị mới

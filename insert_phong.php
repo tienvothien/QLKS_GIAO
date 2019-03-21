@@ -69,3 +69,16 @@ if (isset($_POST['ma_phong_sua_chitietp']) && isset($_POST['malpsuawcuapchitiet'
 	}
 
 }
+// xử lý xoa thiết bị từng loại phòng
+if (isset($_POST['matblp_chitiet123_xoa'])) {
+	include 'conn.php';
+	$capnhat = "UPDATE cothietbi SET XOA=1 WHERE cothietbi.idctb ='$_POST[matblp_chitiet123_xoa]' ";
+	if (mysqli_query($conn, $capnhat)) {
+		echo "99";
+	} else {
+		echo "100";
+	}
+
+}
+
+?>
