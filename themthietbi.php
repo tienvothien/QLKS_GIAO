@@ -18,18 +18,6 @@ if (isset($_POST['them_ma_tb'])) {
 }
 
 //cập nhật lại thiết bị vào
-
-if (isset($_POST['ma_thietbicapnhat']) && isset($_POST['malpsuawcuapchitiet'])) {
-	include 'conn.php';
-	$capnhat = "UPDATE phong SET MA_LOAI_PHONG='" . $_POST['malpsuawcuapchitiet'] . "' WHERE MA_PHONG = '$_POST[ma_thietbicapnhat]' ";
-	if (mysqli_query($conn, $capnhat)) {
-		echo "99";
-	} else {
-		echo "100";
-	}
-
-}//cập nhật lại thiết bị vào
-
 if (isset($_POST['ma_thietbicapnhat12334']) && isset($_POST['ten_ltpcapnhat12345'])) {
 	include 'conn.php';
 	$capnhat = "UPDATE loaithietbi SET TEN_LOAI_THIET_BI='$_POST[ten_ltpcapnhat12345]' WHERE loaithietbi.MA_LOAI_THIET_BI ='$_POST[ma_thietbicapnhat12334]' ";

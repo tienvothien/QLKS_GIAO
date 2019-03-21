@@ -16,7 +16,7 @@ $(document).ready(function(){
       });
       $('#capnhatthietbi12345').on('submit', function (event) {
         event.preventDefault();
-            
+
             var ma_thietbicapnhat12334=($('#ma_thietbicapnhat').val());
             var ten_ltpcapnhat12345=($('#ten_ltpcapnhat').val());
             $.ajax({
@@ -36,6 +36,36 @@ $(document).ready(function(){
               }
             });
           });
+                  // hiện thông báo khi bấm nút xóa
+      $(document).on('submit', 'form[data-confirm]', function(e){
+        var mathietbixoa13143 = $('#ma_tb_canxoa12').val();
+        if (mathietbixoa13143) {
+
+        if(!confirm($(this).data('confirm'))){
+          e.stopImmediatePropagation();
+          e.preventDefault();
+        }else{
+          // //xu ly nhấn nút xóa thiết bị
+              event.preventDefault();
+              $.ajax({
+                url:"./insert_phong.php",
+                method:"POST",
+                data:{mathietbixoa13143:mathietbixoa13143},
+                success:function(data129){
+                  // alert(data129);
+                  if (data129==99) {
+                    alert('Xóa thiết bi thành công');
+                    $('#xoa_ltb_form')[0].reset();
+                    $('#xoa_loaithietbi123_data_Modal').modal('hide');
+                    $('#dlthietbi').load('./dlthietbi.php');
+                  }else {
+                    alert('Lỗi xóa lỗi');
+                  }
+                }
+            });
+        }
+      }
+    });
       // cập nhật lại thông tin thiết bị 
 $(document).on('click', '.capnhattb', function(){
            var ma_thietbicapnhat = $(this).attr("id");
@@ -55,7 +85,8 @@ $(document).on('click', '.capnhattb', function(){
                 }
            });
       });
-   
+
+
   });
 // hiện thông tin suawrtb rtrong ung loại phong
   $(document).on('click', '.sua_tbphong11', function () {
@@ -143,5 +174,27 @@ $(document).on('click', '.capnhattb', function(){
     }
   
 };
+
+      // xoa thiết bị
+      $(document).on('click', '.xoaloaitb', function(){
+
+           var mathietbixoa = $(this).attr("id");
+           $.ajax({
+                url:"./fetch.php",
+                method:"POST",
+                data:{mathietbixoa:mathietbixoa},
+                dataType:"json",
+                success:function(data){
+                    $('#mathietbixoa123').val(data.MA_LOAI_THIET_BI);
+                    $('#ma_tb_canxoa12').val(data.MA_LOAI_THIET_BI);
+                    $('#tenthietbixoa').val(data.TEN_LOAI_THIET_BI);
+                   
+                    
+                    $('#insert1').val("Xóa");
+                    $('#xoa_loaithietbi123_data_Modal').modal('show');
+                }
+
+           });
+      });      
 
 

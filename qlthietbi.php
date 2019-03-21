@@ -102,7 +102,7 @@ include 'ktdangnhap.php';
                 </div>
             </div>
             <!-- Xoa thiêt bị -->
-            <div id="xoa_loaitb_data_Modal" class="modal fade">
+            <div id="xoa_loaithietbi123_data_Modal" class="modal fade">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -112,14 +112,14 @@ include 'ktdangnhap.php';
                         <div class="modal-body">
                             <form method="post" id="xoa_ltb_form" data-confirm="Bạn có chắn muốn xóa thông tin này?">
                                 <label>Mã Loại thiết bị</label>
-                                <input disabled type="text" name="ma_loaitb_xoa_2" id="ma_loaitb_xoa_2" class="form-control "style="text-transform: uppercase;" />
+                                <input disabled type="text" name="mathietbixoa123" id="mathietbixoa123" class="form-control "style="text-transform: uppercase;" />
                                 <br />
                                 <label>Tên loại thiết bị</label>
-                                <textarea disabled  name="ten_loaitb_xoa_2" id="ten_loaitb_xoa_2" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                                <textarea disabled  name="tenthietbixoa" id="tenthietbixoa" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
                                 <br />
-                                <input type="hidden" name="maphong_xoa_2" id="maphong_xoa_2" />
+                                <input type="hidden" name="ma_tb_canxoa12" id="ma_tb_canxoa12" />
                                 <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
-                                <input type="submit" name="insert1" id="insert1" value="Xóa" class="btn btn-danger"  />
+                                <input type="submit" name="insert1" id="xoatb1231415" value="Xóa" class="btn btn-danger"  />
                             </form>
                         </div>
                         <div class="modal-footer">

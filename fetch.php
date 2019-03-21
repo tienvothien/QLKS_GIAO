@@ -36,4 +36,13 @@ if (isset($_POST["ma_thietbicapnhat"])) {
 	echo json_encode($row);
 }
 
+//hiện thông tin loại thiết bị cần xoa
+if (isset($_POST["mathietbixoa"])) {
+
+	include 'conn.php';
+	$query = "SELECT * FROM loaithietbi WHERE loaithietbi.MA_LOAI_THIET_BI ='$_POST[mathietbixoa]'";
+	$result = mysqli_query($conn, $query);
+	$row = mysqli_fetch_array($result);
+	echo json_encode($row);
+}
 ?>
