@@ -75,22 +75,22 @@ include 'ktdangnhap.php';
                 </body>
             </html>
             <!-- Câp nhat lại thong tin thiêt bị -->
-            <div id="chitiet_data_Modal" class="modal fade">
+            <div id="thietbi_data_Modal" class="modal fade">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Cập nhật thông tin Phòng</h4>
+                            <h4 class="modal-title">Cập nhật thông tin thiết bị</h4>
                         </div>
                         <div class="modal-body">
                             <form method="post" id="insert_form" data-confirm="Bạn có chắn muốn cập nhật lại thông tin này?">
-                                <label>Mã Phòng</label>
-                                <input disabled type="text" name="ma_phong_sua" id="ma_phong_sua" class="form-control "style="text-transform: uppercase;" />
+                                <label>Mã thiết bị</label>
+                                <input disabled type="text" name="ma_thietbi" id="ma_thietbi" class="form-control "style="text-transform: uppercase;" />
                                 <br />
-                                <label>Tên Phòng</label>
-                                <textarea   name="ten_loai_phong_sua" id="ten_loai_phong_sua" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                                <label>Tên thiết bị</label>
+                                <textarea   name="ten_thietbi" id="ten_thietbi" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
                                 <br />
-                                <input type="hidden" name="ma_phong_sua_1" id="ma_phong_sua_1" />
+                                <input type="hidden" name="ma_tbsua" id="ma_tbsua" />
                                 <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
                                 <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-danger capnhattb" />
                             </form>
