@@ -14,6 +14,51 @@ $(document).ready(function(){
               }
             });
       });
+      // cập nhật lại thông tin thiết bị 
+$(document).on('click', '.capnhattb', function(){
+           var ma_thietbicapnhat = $(this).attr("id");
+           $.ajax({
+                url:"./fetch.php",
+                method:"POST",
+                data:{ma_thietbicapnhat:ma_thietbicapnhat},
+                dataType:"json",
+                success:function(data){
+                  // alert(data);
+                    $('#ma_thietbicapnhat').val(data.MA_LOAI_THIET_BI);
+                    $('#ten_ltpcapnhat').val(data.TEN_LOAI_THIET_BI);
+                    $('#ma_tbsua1').val(data.MA_LOAI_THIET_BI);
+                    
+                    $('#insert').val("Cập nhật");
+                    $('#thietbi_data_Modal').modal('show');
+                }
+
+           });
+
+              $('#capnhatthietbi12345').on('submit', function (event) {
+            // alert(ma_thietbicapnhat);
+            var ma_thietbicapnhat12334=($('#ma_thietbicapnhat').val());
+            var ten_ltpcapnhat12345=($('#ten_ltpcapnhat').val());
+            $.ajax({
+              url: './themthietbi.php',
+              type: 'POST',
+              data: {ma_thietbicapnhat12334: ma_thietbicapnhat12334,
+                ten_ltpcapnhat12345:ten_ltpcapnhat12345},
+              success:function (dulieudacapnhat) {
+                if (dulieudacapnhat==99) {
+                  alert('Cập nhật thành công');
+                  $('#thietbi_data_Modal').modal('hide');
+                  $('#dlthietbi').load('./dlthietbi.php');
+
+                }else{
+                  alert('Lỗi cập nhật');
+                }
+              }
+            });
+          });
+
+      });
+
+
   });
 
 
@@ -66,4 +111,5 @@ $(document).ready(function(){
     }
   
 };
+
 

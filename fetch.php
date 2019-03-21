@@ -17,4 +17,14 @@ if (isset($_POST["MA_LOAI_THIET_BI_XOA"])) {
 	echo json_encode($row);
 }
 
+
+//hiện thông tin thiết bị cần cập nhật lại
+if (isset($_POST["ma_thietbicapnhat"])) {
+	include 'conn.php';
+	$query = "SELECT * FROM loaithietbi WHERE MA_LOAI_THIET_BI = '$_POST[ma_thietbicapnhat]'";
+	$result = mysqli_query($conn, $query);
+	$row = mysqli_fetch_array($result);
+	echo json_encode($row);
+}
+
 ?>
