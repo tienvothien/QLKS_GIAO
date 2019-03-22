@@ -43,10 +43,10 @@ if (isset($_POST['MA_LOAI_THIET_BI_XOA12'])) {
 	}
 }
 //them thiết bị vào loại phòngma_loai_phong
-if (isset($_POST['ma_loai_phong'])) {
+if (isset($_POST['ma_loai_phong']) && isset($_POST['ma_loai_tb'])) {
 	include 'conn.php';
 	// kiêm tra thiết bị đã tồng tại chưa
-	$kt_maltb = mysqli_query($conn, "SELECT * FROM cothietbi WHERE MA_LOAI_THIET_BI = '" . $_POST['ma_loai_tb'] . "'");
+	$kt_maltb = mysqli_query($conn, "SELECT * FROM cothietbi WHERE  XOA=0 AND MA_LOAI_THIET_BI = '" . $_POST['ma_loai_tb'] . "' AND MA_LOAI_PHONG='$_POST[ma_loai_phong]'  ");
 	if (mysqli_num_rows($kt_maltb)) {
 		echo "1";
 	} else {

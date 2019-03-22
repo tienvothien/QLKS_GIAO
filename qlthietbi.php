@@ -37,7 +37,7 @@ include 'ktdangnhap.php';
                                             <h4 class="modal-title">Thêm loại thiết bị</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <form style="font-size: 20px; margin: auto;" class="form-horizontal" action="themthietbi.php">
+                                            <form style="font-size: 20px; margin: auto;"  id="themthietbivaoloaip123" class="form-horizontal" action="themthietbi.php">
                                                 <div class="form-group">
                                                     <label class="control-label col-sm-4" for="email">Mã loại thiết bị</label>
                                                     <div class="col-sm-8">

@@ -10,7 +10,7 @@ if (isset($_POST["ma_phong_chitiet"])) {
            <table class="table table-bordered table-hover">';
 		$so1 = 1;
 		while ($row = mysqli_fetch_array($result)) {
-			$tb = (mysqli_query($conn, "SELECT * FROM cothietbi, loaithietbi WHERE cothietbi.MA_LOAI_THIET_BI = loaithietbi.MA_LOAI_THIET_BI AND cothietbi.MA_LOAI_PHONG = '" . $row["MA_LOAI_PHONG"] . "'"));
+			$tb = (mysqli_query($conn, "SELECT * FROM cothietbi, loaithietbi WHERE  cothietbi.XOA=0 AND cothietbi.MA_LOAI_THIET_BI = loaithietbi.MA_LOAI_THIET_BI AND cothietbi.MA_LOAI_PHONG = '" . $row["MA_LOAI_PHONG"] . "'  "));
 			$output .= '
                 <tr>
                      <td width="30%"><label>Số phòng</label></td>

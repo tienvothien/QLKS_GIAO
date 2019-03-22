@@ -14,6 +14,28 @@ $(document).ready(function(){
               }
             });
       });
+       // xoa thiết bị
+      $(document).on('click', '.xoaloaitb', function(){
+
+           var mathietbixoa = $(this).attr("id");
+           $.ajax({
+                url:"./fetch.php",
+                method:"POST",
+                data:{mathietbixoa:mathietbixoa},
+                dataType:"json",
+                success:function(data){
+                    $('#mathietbixoa123').val(data.MA_LOAI_THIET_BI);
+                    $('#ma_tb_canxoa12').val(data.MA_LOAI_THIET_BI);
+                    $('#tenthietbixoa').val(data.TEN_LOAI_THIET_BI);
+                   
+                    
+                    $('#insert1').val("Xóa");
+                    $('#xoa_loaithietbi123_data_Modal').modal('show');
+                }
+
+           });
+      });   
+      //cập nhật thiets bị   
       $('#capnhatthietbi12345').on('submit', function (event) {
         event.preventDefault();
 
@@ -162,6 +184,8 @@ $(document).on('click', '.capnhattb', function(){
             }else{
               if (data123==99) {
                 alert("Thêm thiết bị thành công");
+                $('#ma_loai_phong').val();
+                $('#ma_loai_tb').val();
                 $('#dlthemtbphong').load('./dlthemtbphong.php');
               }
             }         
@@ -175,26 +199,6 @@ $(document).on('click', '.capnhattb', function(){
   
 };
 
-      // xoa thiết bị
-      $(document).on('click', '.xoaloaitb', function(){
-
-           var mathietbixoa = $(this).attr("id");
-           $.ajax({
-                url:"./fetch.php",
-                method:"POST",
-                data:{mathietbixoa:mathietbixoa},
-                dataType:"json",
-                success:function(data){
-                    $('#mathietbixoa123').val(data.MA_LOAI_THIET_BI);
-                    $('#ma_tb_canxoa12').val(data.MA_LOAI_THIET_BI);
-                    $('#tenthietbixoa').val(data.TEN_LOAI_THIET_BI);
-                   
-                    
-                    $('#insert1').val("Xóa");
-                    $('#xoa_loaithietbi123_data_Modal').modal('show');
-                }
-
-           });
-      });      
+     
 
 
