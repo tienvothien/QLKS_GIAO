@@ -1,6 +1,6 @@
 <?php
 include "conn.php";
-$sql = "SELECT * FROM  loaithietbi where xoa =0 ";
+$sql = "SELECT * FROM  loaithietbi where loaithietbi.XOA=0 ";
 $query = mysqli_query($conn, $sql);
 // $num=mysql_num_rows($query);
 echo "<table class='table table-bordered table-responsive dlthietbi'>
@@ -23,7 +23,20 @@ while ($row = mysqli_fetch_array($query)) {
         <td>
             <button type='button' class='btn btn-info btn-lg1 btn_xoatb' id=" . $row['MA_LOAI_THIET_BI'] . ">Xóa</button>
         </td
-    </tr>";
+    </tr>
+                                        <td>$STT</td>
+                                        <td>$row[MA_LOAI_THIET_BI]</td>
+                                        <td style='text-align: left;'>$row[TEN_LOAI_THIET_BI]</td>
+
+                                        <td>
+                                          <button type='button' class='btn btn-info btn-lg1 capnhattb' ' id=" . $row['MA_LOAI_THIET_BI'] . ">Cập nhật</button>
+                                        </td>
+                                        <td>
+                                             <button type='button' class='btn btn-info btn-lg1 xoaloaitb' id=" . $row['MA_LOAI_THIET_BI'] . ">Xóa</button>
+                                        </td
+                                </tr>";
+	$STT++;
+
 }
 echo "</table>";
 echo $row['MA_LOAI_THIET_BI'];

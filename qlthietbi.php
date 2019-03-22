@@ -7,7 +7,7 @@ include 'ktdangnhap.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="./vendor/bootstrap.js"></script>
-    <script type="text/javascript" src="./js/1.js"></script>
+    <script type="text/javascript" src="./js/themtb.js"></script>
     <link rel="stylesheet" href="./vendor/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -83,15 +83,15 @@ include 'ktdangnhap.php';
                             <h4 class="modal-title">Cập nhật thông tin thiết bị</h4>
                         </div>
                         <div class="modal-body">
-                            <form method="post" id="insert_form" data-confirm="Bạn có chắn muốn cập nhật lại thông tin này?">
+                            <form method="post" id="capnhatthietbi12345" data-confirm="Bạn có chắn muốn cập nhật lại thông tin này?">
                                 <label>Mã thiết bị</label>
-                                <input disabled type="text" name="ma_thietbi" id="ma_thietbi" class="form-control "style="text-transform: uppercase;" />
+                                <input disabled type="text" name="ma_thietbicapnhat" id="ma_thietbicapnhat" class="form-control "style="text-transform: uppercase;" />
                                 <br />
                                 <label>Tên thiết bị</label>
-                                <textarea   name="ten_thietbi" id="ten_thietbi" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                                <textarea   name="ten_ltpcapnhat" id="ten_ltpcapnhat" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
                                 <br />
-                                <input type="hidden" name="ma_tbsua" id="ma_tbsua" />
-                                <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
+                                <input type="hidden" name="ma_tbsua1" id="ma_tbsua1" />
+                                <input type="hidden" name="thong_bao_loi_capnhat1" id="thong_bao_loi_capnhat1" />
                                 <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-danger capnhattb" />
                             </form>
                         </div>
@@ -102,7 +102,7 @@ include 'ktdangnhap.php';
                 </div>
             </div>
             <!-- Xoa thiêt bị -->
-            <div id="xoa_loaitb_data_Modal" class="modal fade">
+            <div id="xoa_loaithietbi123_data_Modal" class="modal fade">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -112,14 +112,14 @@ include 'ktdangnhap.php';
                         <div class="modal-body">
                             <form method="post" id="xoa_ltb_form" data-confirm="Bạn có chắn muốn xóa thông tin này?">
                                 <label>Mã Loại thiết bị</label>
-                                <input disabled type="text" name="ma_loaitb_xoa_2" id="ma_loaitb_xoa_2" class="form-control "style="text-transform: uppercase;" />
+                                <input disabled type="text" name="mathietbixoa123" id="mathietbixoa123" class="form-control "style="text-transform: uppercase;" />
                                 <br />
                                 <label>Tên loại thiết bị</label>
-                                <textarea disabled  name="ten_loaitb_xoa_2" id="ten_loaitb_xoa_2" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
+                                <textarea disabled  name="tenthietbixoa" id="tenthietbixoa" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea>
                                 <br />
-                                <input type="hidden" name="maphong_xoa_2" id="maphong_xoa_2" />
+                                <input type="hidden" name="ma_tb_canxoa12" id="ma_tb_canxoa12" />
                                 <input type="hidden" name="thong_bao_loi_capnhat" id="thong_bao_loi_capnhat" />
-                                <input type="submit" name="insert1" id="insert1" value="Xóa" class="btn btn-danger"  />
+                                <input type="submit" name="insert1" id="xoatb1231415" value="Xóa" class="btn btn-danger"  />
                             </form>
                         </div>
                         <div class="modal-footer">
