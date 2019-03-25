@@ -23,10 +23,10 @@ if (isset($_POST["matblp_chitiet123"])) {
 	$row = mysqli_fetch_array($result);
 	echo json_encode($row);
 }
-// hiên thông tin xóa thiết bị
-if (isset($_POST["mathietbixoa_123"])) {
+// hiên thông tin thiết bị
+if (isset($_POST["ma_thietbicapnhat"])) {
 	include 'conn.php';
-	$query = "SELECT * FROM loaithietbi WHERE loaithietbi.MA_LOAI_THIET_BI ='$_POST[mathietbixoa_123]'";
+	$query = "SELECT * FROM loaithietbi WHERE loaithietbi.MA_LOAI_THIET_BI ='$_POST[ma_thietbicapnhat]'";
 	$result = mysqli_query($conn, $query);
 	$row = mysqli_fetch_array($result);
 	echo json_encode($row);

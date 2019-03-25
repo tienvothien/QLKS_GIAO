@@ -18,7 +18,7 @@ while ($row = mysqli_fetch_array($query)) {
         <td>$row[MA_LOAI_THIET_BI]</td>
         <td style='text-align: left;'>$row[TEN_LOAI_THIET_BI]</td>
         <td>
-            <button type='button' class='btn btn-info btn-lg1 capnhattb'  onclick='themcapnhat();'>Cập nhật</button>
+            <button type='button' class='btn btn-info btn-lg1 capnhattb2323' id=" . $row['MA_LOAI_THIET_BI'] . ">Cập nhật</button>
         </td>
         <td>
             <button type='button' class='btn btn-info btn-lg1 btn_xoatb' id=" . $row['MA_LOAI_THIET_BI'] . ">Xóa</button>

@@ -21,7 +21,7 @@ $(document).ready(function(){
            $.ajax({
                 url:"./fetch.php",
                 method:"POST",
-                data:{mathietbixoa_123:mathietbixoa122343334},
+                data:{ma_thietbicapnhat:mathietbixoa122343334},
                 dataType:"json",
                 success:function(data){
                     $('#mathietbixoa123').val(data.MA_LOAI_THIET_BI);
@@ -89,7 +89,7 @@ $(document).ready(function(){
       }
     });
       // cập nhật lại thông tin thiết bị 
-$(document).on('click', '.capnhattb', function(){
+$(document).on('click', '.capnhattb2323', function(){
            var ma_thietbicapnhat = $(this).attr("id");
            $.ajax({
                 url:"./fetch.php",
