@@ -15,13 +15,13 @@ $(document).ready(function(){
             });
       });
        // xoa thiết bị
-      $(document).on('click', '.xoaloaitb', function(){
+      $(document).on('click', '.btn_xoatb', function(){
 
-           var mathietbixoa = $(this).attr("id");
+           var mathietbixoa122343334 = $(this).attr("id");
            $.ajax({
                 url:"./fetch.php",
                 method:"POST",
-                data:{mathietbixoa:mathietbixoa},
+                data:{mathietbixoa_123:mathietbixoa122343334},
                 dataType:"json",
                 success:function(data){
                     $('#mathietbixoa123').val(data.MA_LOAI_THIET_BI);

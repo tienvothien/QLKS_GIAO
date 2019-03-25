@@ -24,6 +24,7 @@ while ($row = mysqli_fetch_array($query)) {
             <button type='button' class='btn btn-info btn-lg1 btn_xoatb' id=" . $row['MA_LOAI_THIET_BI'] . ">Xóa</button>
         </td
     </tr>";
+	$STT++;
 }
 echo "</table>";
 echo $row['MA_LOAI_THIET_BI'];

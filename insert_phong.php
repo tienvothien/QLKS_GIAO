@@ -83,11 +83,8 @@ if (isset($_POST['matblp_chitiet123_xoa'])) {
 //Xóa từng loại thiết bị
 if (isset($_POST['mathietbixoa13143'])) {
 	include 'conn.php';
-	// echo "mtb  ". $_POST['mathietbixoa13143'];
-	// kiêm tra ma phong đã tồng tại chưa
-
 	// insert dữ liệu vào cơ sơ dữ liệu
-	$update_tb1 = "UPDATE loaithietbi SET loaithietbi.XOA=0 WHERE loaithietbi.MA_LOAI_THIET_BI='$_POST[mathietbixoa13143]'";
+	$update_tb1 = "UPDATE loaithietbi SET loaithietbi.XOA=1 WHERE loaithietbi.MA_LOAI_THIET_BI='$_POST[mathietbixoa13143]'";
 	if (mysqli_query($conn, $update_tb1)) {
 		echo "99";
 	} else {
