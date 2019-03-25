@@ -14,9 +14,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li>
-                            <a href="login.php"><i class="fa fa-fw fa-power-off"></i> Đăng nhập</a>
-                        </li>
+                        
                        
                         <li>
                             <a href="./login/dangxuat.php"><i class="fa fa-fw fa-power-off"></i> Đăng xuất</a>
