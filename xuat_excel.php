@@ -81,6 +81,11 @@ if (isset($_POST['xuatfile_danhsachthietbiphong'])) {
 		header('Content-Disposition: attachment; filename=danhsachthietbi.xls');
 		echo $output;
 	}
+<<<<<<< HEAD
 } 
 ?>
  
+=======
+}
+?>
+>>>>>>> 87bdafbf4386c0810fae9dda2d03d191597254f5
