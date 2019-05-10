@@ -20,8 +20,6 @@ if (isset($_POST['ma_loai_phong_themphong']) && isset($_POST['ma_phong_them12'])
 // xóa dữ liệu phòng
 if (isset($_POST['maphong_xoa_2'])) {
 	include 'conn.php';
-	// kiêm tra ma phong đã tồng tại chưa
-
 	// insert dữ liệu vào cơ sơ dữ liệu
 	$update_phong = "UPDATE phong SET xoa='1' WHERE MA_PHONG='$_POST[maphong_xoa_2]'";
 	if (mysqli_query($conn, $update_phong)) {
@@ -91,4 +89,5 @@ if (isset($_POST['mathietbixoa13143'])) {
 		echo "100";
 	}
 }
+
 ?>

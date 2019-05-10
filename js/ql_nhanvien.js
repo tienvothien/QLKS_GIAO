@@ -89,7 +89,6 @@
                           email_nhanvien_them1:email_nhanvien_them1
                         },
                         success:function(data1234){
-                          alert(data1234);
 
                           if (data1234==1) {
                             $('#ma_nhanvien_them1').addClass('viendo');
@@ -98,7 +97,7 @@
                           }else{
                             if (data1234==999) {
                               alert("Thêm nhân viên thành công");
-                              $('#dlnhanvienks').load('./dlnhanvienks.php');
+                              $('#dl_nhanvienks').load('./dl_nhanvienks.php');
                             }
                           }         
                         }
@@ -127,3 +126,121 @@
     }
   }
 };
+
+//Xóa thông tin nhân viên
+$(document).on('click', '.xoanv', function(){
+  // alert('msg');
+           var manhanvienxoa1 = $(this).attr("id");
+           $.ajax({
+                url:"./fetch.php",
+                method:"POST",
+                data:{manhanvienxoa1:manhanvienxoa1},
+                dataType:"json",
+                success:function(data){
+                    $('#manhanvienxoa1').val(data.MA_NV);
+                    $('#honhanvienxoa1').val(data.HO_NV);
+                    $('#tennhanvienxoa1').val(data.TEN_NV);
+                    $('#gioitinhnhanvienxoa1').val(data.GIOI_TINH);
+                    $('#ngaysinhnhanvienxoa1').val(data.NGAY_SINH);
+                    $('#diachinhanvienxoa1').val(data.DIA_CHI);
+                    $('#sdtnhanvienxoa1').val(data.SDT);
+                    $('#emailnhanvienxoa1').val(data.EMAIL);
+                    $('#manhanvienxoa2').val(data.MA_NV);
+                    
+                    $('#insert1').val("Xóa");
+                    $('#xoattnhanvien_data_Modal').modal('show');
+                }
+
+           });
+      }); 
+// hiện thông báo khi bấm nút xóa (Xóa thông tin nhân viên)
+      $(document).on('submit', 'form[data-confirm]', function(e){
+        var manhanvienxoa2 = $('#manhanvienxoa2').val();
+        if (manhanvienxoa2) {
+
+        if(!confirm($(this).data('confirm'))){
+          e.stopImmediatePropagation();
+          e.preventDefault();
+        }else{
+          // //xu ly nhấn nút xóa thiết bị
+          // alert(maphong_xoa_2);
+              event.preventDefault();
+              $.ajax({
+                url:"./insert_tatca.php",
+                method:"POST",
+                data:{manhanvienxoa2:manhanvienxoa2},
+                success:function(data129){
+                  if (data129==99) {
+                    alert('Xóa thông tin nhân viên thành công');
+                    $('#xoa_thongtinnhanvien_form')[0].reset();
+                    $('#xoattnhanvien_data_Modal').modal('hide');
+                    $('#dl_nhanvienks').load('./dl_nhanvienks.php');
+                  }else {
+                    alert('Lỗi xóa nhân viên');
+                  }
+                }
+            });
+        }
+      }
+    });
+
+// cập nhật lại thông tin nhân viên
+$(document).on('click', '.capnhat_ttnv', function(){
+  // alert('msg');
+           var manhanvien_capnhat = $(this).attr("id");
+           $.ajax({
+                url:"./fetch.php",
+                method:"POST",
+                data:{manhanvien_capnhat:manhanvien_capnhat},
+                dataType:"json",
+                success:function(data){
+                    $('#manhanvien_capnhat').val(data.MA_NV);
+                    $('#honhanvien_capnhat').html(data.HO_NV);
+                    $('#tennhanvien_capnhat').html(data.TEN_NV);
+                    $('#gtnhanvien_capnhat').html(data.GIOI_TINH);
+                    $('#gtnhanvien_capnhat').val(data.GIOI_TINH);
+                    $('#ngaysinhnhanvien_capnhat').html(data.NGAY_SINH);
+                    $('#diachinhanvien_capnhat').val(data.DIA_CHI);
+                    $('#sdtnhanvien_capnhat').val(data.SDT);
+                    $('#email_capnhat').val(data.EMAIL);
+                    // $('#dlphongsua_ttchitiep').val(data.MA_LOAI_PHONG);
+                    $('#manhanvien_capnhat2').val(data.MA_NV);
+                    
+                    $('#insert').val("Cập nhật");
+                    $('#capnhat_ttnhanvien_data_Modal').modal('show');
+                }
+
+           });
+      });
+$(document).ready(function(){
+   $('#capnhat_ttnhanvien').on('submit', function (e) {
+          e.preventDefault();
+           if(!confirm($(this).data('confirm'))){
+          e.stopImmediatePropagation();
+          e.preventDefault();
+        }else{
+          $.ajax({
+                url:"./capnhat.php",
+                type:"POST",
+                data:new FormData(this),
+                contentType: false,
+                processData: false, 
+                success:function(data){
+                    if (data==1) {
+                      alert('Số điện thoại đã tồn tại');
+                    }else{
+                      if (data==99) {
+                        alert('Cập nhật thành công');
+                          $('#capnhat_ttnhanvien_data_Modal').modal('hide');
+                          $('#dl_nhanvienks').load('./dl_nhanvienks.php');
+
+                      }else{
+                        alert('Lỗi cập nhật !');
+                      }
+                    }
+                }
+
+           });
+        }
+    });
+});

@@ -2,6 +2,7 @@
 <?php
 //them nhân viên mời
 if (isset($_POST['ma_nhanvien_them1'])) {
+	// echo $_POST["sdt_nhanvien_them1"];
 	include 'conn.php';
 	// kiêm tra ma phong đã tồng tại chưa
 	$kt_manhanvien = mysqli_query($conn, "SELECT * FROM nhanvienletan WHERE MA_NV = '" . $_POST['ma_nhanvien_them1'] . "'");

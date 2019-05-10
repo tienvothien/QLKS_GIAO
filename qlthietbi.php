@@ -3,7 +3,7 @@ include 'ktdangnhap.php';
 ?>
 <!DOCTYPE html>
 <html lang="en"><head>
-    <title> Hệ thông quản lý khách sạn</title>
+    <title> Quản lý thiết bị</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="./vendor/bootstrap.js"></script>
@@ -61,6 +61,7 @@ include 'ktdangnhap.php';
                             </div>
                         </div>
                     </div>
+                    <hr class="ngay_ad">
                     <div class="container-fluid noidungthaydoi">
                         <div class="row thaydoi1 text-center"><!-- nho doi ten class -->
                         <!-- phan62 noi65 duung -->

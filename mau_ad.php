@@ -4,7 +4,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en"><head>
-    <title> Hệ thông KTX ĐH Kiên Giang </title>
+    <title> Hệ thông quản lý khách sạn </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="./vendor/bootstrap.js"></script>
@@ -18,6 +18,7 @@ session_start();
         <br>
         <div class="container-fluid">
             <div class="row">
+                <?php include 'menutren.php';?>
                 <?php include 'menutrai.php';?>
                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 benphai">
                     <div class="row">

@@ -3,7 +3,7 @@ include 'ktdangnhap.php';
 ?>
 <!DOCTYPE html>
 <html lang="en"><head>
-    <title> Hệ Thống Quản Lý Khách Sạn</title>
+    <title> Quản lý phòng</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="./vendor/bootstrap.js"></script>
@@ -52,20 +52,20 @@ include 'ktdangnhap.php';
                                                     <select class="form-control select_lp"  name="ma_loai_phong" id="ma_loai_phong">
                                                         <option value="" >Chọn Loại phòng</option>
                                                         <?php
-include "conn.php";
-$select = "select * from loaiphong";
-$query = mysqli_query($conn, $select);
-$num = mysqli_num_rows($query);
-if ($num > 0) {
-	while ($row = mysqli_fetch_array($query)) {
-		$MA_LOAI_PHONG = $row['MA_LOAI_PHONG'];
-		$TEN_LOAI_PHONG = $row['TEN_LOAI_PHONG'];
-		echo "<option value='$MA_LOAI_PHONG'>$TEN_LOAI_PHONG</option>";
-	}
-} else {
-	echo "<option value=''>k co du lieu</option>";
-}
-?>
+                                                        include "conn.php";
+                                                        $select = "select * from loaiphong";
+                                                        $query = mysqli_query($conn, $select);
+                                                        $num = mysqli_num_rows($query);
+                                                        if ($num > 0) {
+                                                        	while ($row = mysqli_fetch_array($query)) {
+                                                        		$MA_LOAI_PHONG = $row['MA_LOAI_PHONG'];
+                                                        		$TEN_LOAI_PHONG = $row['TEN_LOAI_PHONG'];
+                                                        		echo "<option value='$MA_LOAI_PHONG'>$TEN_LOAI_PHONG</option>";
+                                                        	}
+                                                        } else {
+                                                        	echo "<option value=''>k co du lieu</option>";
+                                                        }
+                                                        ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -80,6 +80,7 @@ if ($num > 0) {
                         </div>
                         <!-- ket thuc modal them -->
                     </div>
+                    <hr class="ngay_ad">
                     <div class="container-fluid noidungthaydoi">
                         <div class="row thaydoi1 text-center"><!-- nho doi ten class -->
                             <!-- nội dung thay đổi-->
@@ -128,12 +129,12 @@ if ($num > 0) {
                             <select name="ttphongsuaw_loaiphong" id="ttphongsuaw_loaiphong" class="form-control" required="required">
                                 <option  id="dlphongsua_ttchitiep" value=""></option>
                                 <?php
-$qr = mysqli_query($conn, "SELECT loaiphong.MA_LOAI_PHONG, loaiphong.TEN_LOAI_PHONG FROM loaiphong WHERE loaiphong.XOA = 0");
-while ($rq = mysqli_fetch_array($qr)) {
-	echo "<option   value='$rq[MA_LOAI_PHONG]'>$rq[TEN_LOAI_PHONG]</option>";
-}
+                                $qr = mysqli_query($conn, "SELECT loaiphong.MA_LOAI_PHONG, loaiphong.TEN_LOAI_PHONG FROM loaiphong WHERE loaiphong.XOA = 0");
+                                while ($rq = mysqli_fetch_array($qr)) {
+                                	echo "<option   value='$rq[MA_LOAI_PHONG]'>$rq[TEN_LOAI_PHONG]</option>";
+                                }
 
-?>
+                                ?>
                             </select>
                             <!-- <textarea   name="ten_loai_phong_sua" id="ten_loai_phong_sua" class="form-control" rows="1" style=" text-transform: capitalize;"></textarea> -->
                             <br />

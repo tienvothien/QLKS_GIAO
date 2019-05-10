@@ -36,8 +36,8 @@ if (mysqli_num_rows($dl1)) {
 								<td>$row[EMAIL]</td>
 			";?>
 			<!-- Sửa -->
-			<td><button type="button" class="btn btn-info sua_nv " id="<?php echo $row['MA_NV']; ?>" >Sửa</button></td>
-			<td><button type="button" class="btn btn-info xoanv" id="<?php echo $row['MA_NV']; ?>">Xóa</button></td>
+			<td><button type="button" class="btn btn-info capnhat_ttnv " id="<?php echo $row['MA_NV']; ?>" > <span class="glyphicon glyphicon-pencil"></span> Cập nhật</button></td>
+			<td><button type="button" class="btn btn-info xoanv" id="<?php echo $row['MA_NV']; ?>"> <span class="glyphicon glyphicon-trash"></span> Xóa</button></td>
 			
 			
 			<?php

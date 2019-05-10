@@ -16,7 +16,7 @@ if (mysqli_num_rows($dl1)) {
 					 						";?>
 				<p>
 
-					<button type="button" class="btn btn-info sua_tbphong11 " id="<?php echo $row['MA_LOAI_PHONG']; ?>" >Sửa</button>
+					<button type="button" class="btn btn-info sua_tbphong11 " id="<?php echo $row['MA_LOAI_PHONG']; ?>" > <span class="glyphicon glyphicon-trash"></span> Xóa</button>
 					<button type="button" class="btn btn-info chitiet_tbp" id="<?php echo $row['MA_LOAI_PHONG']; ?>" >Chi tiết</button>
 				</p>
 					 						<?php echo ";</div>

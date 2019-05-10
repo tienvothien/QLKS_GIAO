@@ -53,7 +53,7 @@ if (isset($_POST['xuatfile_danhsachthietbiphong'])) {
 				<table class="table table-hover table-bordered text-center table-striped">
 							<thead class="thead-light">
 									<tr>
-											<th colspan="3" rowspan="" headers="" scope=""> Danh sách Phòng</th>
+											<th colspan="3" rowspan="" headers="" scope=""> Danh sách thiết bị</th>
 									</tr>
 									<tr >
 											<th class="text-center">STT</th>
@@ -70,6 +70,48 @@ if (isset($_POST['xuatfile_danhsachthietbiphong'])) {
 										<td>' . $stt . '</td>
 										<td style=" text-transform: capitalize; text-align: center;">' . $row['MA_LOAI_THIET_BI'] . '</td>
 										<td style=" text-transform: capitalize; text-align: left;">' . $row['TEN_LOAI_THIET_BI'] . '</td>
+								</tr>
+										';
+			$stt++;
+		}
+		$output .= '
+						</tbody>
+				</table>';
+		header('Content-Type: application/xls');
+		header('Content-Disposition: attachment; filename=danhsachthietbi.xls');
+		echo $output;
+	}
+
+} 
+//Xuất file danh sách loại phòng
+if (isset($_POST['xuatfile_danhsachloaiphong'])) {
+	include 'conn.php';
+	$output = '';
+	$ketqua_qr = mysqli_query($conn, "SELECT * FROM cothietbi, loaithietbi WHERE cothietbi.MA_LOAI_THIET_BI = loaithietbi.MA_LOAI_THIET_BI AND cothietbi.XOA=0");
+	if (mysqli_num_rows($ketqua_qr)) {
+		$output .= '
+				<table class="table table-hover table-bordered text-center table-striped">
+							<thead class="thead-light">
+									<tr>
+											<th colspan="4" rowspan="" headers="" scope=""> Danh sách loại phòng</th>
+									</tr>
+									<tr >
+											<th class="text-center">STT</th>
+											<th class="text-center">Mã loại phòng</th>
+											<th class="text-center">Mã loại thiết bị</th>
+											<th class="text-center">Tên loại thiết bị</th>
+										</tr>
+								</thead>
+								<tbody>
+						';
+		$stt = 1;
+		while ($row = mysqli_fetch_array($ketqua_qr)) {
+			$output .= '
+								<tr>
+										<td>' . $stt . '</td>
+										<td style=" text-transform: capitalize; text-align: center;">' . $row['MA_LOAI_PHONG'] . '</td>
+										<td style=" text-transform: capitalize; text-align: left;">' . $row['MA_LOAI_THIET_BI'] . '</td>
+										<td style=" text-transform: capitalize; text-align: left;">' . $row['TEN_LOAI_THIET_BI'] . '</td>										
 								</tr>
 										';
 			$stt++;

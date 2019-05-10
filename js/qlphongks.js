@@ -42,7 +42,7 @@
         });
         // kết thúc code thêm dữ liệu phòng
       }
-      // két thúc kiểm tra mã loại phòng
+      // két thúc kiểm tra mã loại phòng#
     }else{
       $('#ma_phong_them1').addClass('viendo');
       $('#ma_phong_them1').removeClass('vienxanh');
@@ -78,6 +78,8 @@ $(document).ready(function(){
           success:function (dulieudacapnhat) {
             if (dulieudacapnhat==99) {
               alert('Sữa thành công');
+              $('#sua_thongtinphong1')[0].reset();
+              $('#chitiet_data_Modal').modal('hide');
             }else{
               alert('Lỗi cập nhật');
               $('#views_phong').modal('hide');
@@ -109,7 +111,7 @@ $(document).on('click', '.sua_phong', function(){
            });
       });
      
-      // xoa phong
+    // xoa phong
       $(document).on('click', '.xoaphong', function(){
            var ma_phong_sua = $(this).attr("id");
            $.ajax({

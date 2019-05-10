@@ -3,7 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en"><head>
-    <title> Thêm thiết bị </title>
+    <title>Quản lý thiết bị trong từng loại phòng</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="./vendor/bootstrap.js"></script>
@@ -26,6 +26,9 @@ session_start();
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-right ">
                             <button type="button" class="btn btn-info btn-lg nutthemnek " data-toggle="modal" data-target="#myModal">Thêm thiết bị</button>
+                            <form action="xuat_excel.php" method="POST" accept-charset="utf-8">
+                                <input type="submit" class="btn  btn-success nutthemnek btn-lg" name="xuatfile_danhsachloaiphong" value="Xuất Excel">
+                            </form>
                         </div>
                         <!-- hiện modal them phonf -->
                         <div class="modal fade " id="myModal" role="dialog">
@@ -43,20 +46,20 @@ session_start();
                                                     <select class="form-control select_lp"  name="ma_loai_phong" id="ma_loai_phong" >
                                                         <option value="" >Chọn Loại phòng</option>
                                                         <?php
-include "conn.php";
-$select = "select * from loaiphong where xoa=0";
-$query = mysqli_query($conn, $select);
-$num = mysqli_num_rows($query);
-if ($num > 0) {
-	while ($row = mysqli_fetch_array($query)) {
-		$MA_LOAI_PHONG = $row['MA_LOAI_PHONG'];
-		$TEN_LOAI_PHONG = $row['TEN_LOAI_PHONG'];
-		echo "<option value='$MA_LOAI_PHONG'>$TEN_LOAI_PHONG</option>";
-	}
-} else {
-	echo "<option value=''>k co du lieu</option>";
-}
-?>
+                                                            include "conn.php";
+                                                            $select = "select * from loaiphong where xoa=0";
+                                                            $query = mysqli_query($conn, $select);
+                                                            $num = mysqli_num_rows($query);
+                                                            if ($num > 0) {
+                                                            	while ($row = mysqli_fetch_array($query)) {
+                                                            		$MA_LOAI_PHONG = $row['MA_LOAI_PHONG'];
+                                                            		$TEN_LOAI_PHONG = $row['TEN_LOAI_PHONG'];
+                                                            		echo "<option value='$MA_LOAI_PHONG'>$TEN_LOAI_PHONG</option>";
+                                                            	}
+                                                            } else {
+                                                            	echo "<option value=''>k co du lieu</option>";
+                                                            }
+                                                            ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -66,20 +69,20 @@ if ($num > 0) {
                                                     <select class="form-control select_ltb"  name="ma_loai_tb" id="ma_loai_tb">
                                                         <option value="" >Chọn loại thiết bị</option>
                                                         <?php
-include "conn.php";
-$select = "select * from loaithietbi where xoa=0";
-$query = mysqli_query($conn, $select);
-$num = mysqli_num_rows($query);
-if ($num > 0) {
-	while ($row = mysqli_fetch_array($query)) {
-		$MA_LOAI_THIET_BI = $row['MA_LOAI_THIET_BI'];
-		$TEN_LOAI_THIET_BI = $row['TEN_LOAI_THIET_BI'];
-		echo "<option value='$MA_LOAI_THIET_BI'>$TEN_LOAI_THIET_BI</option>";
-	}
-} else {
-	echo "<option value=''>k co du lieu</option>";
-}
-?>
+                                                        include "conn.php";
+                                                        $select = "select * from loaithietbi where xoa=0";
+                                                        $query = mysqli_query($conn, $select);
+                                                        $num = mysqli_num_rows($query);
+                                                        if ($num > 0) {
+                                                        	while ($row = mysqli_fetch_array($query)) {
+                                                        		$MA_LOAI_THIET_BI = $row['MA_LOAI_THIET_BI'];
+                                                        		$TEN_LOAI_THIET_BI = $row['TEN_LOAI_THIET_BI'];
+                                                        		echo "<option value='$MA_LOAI_THIET_BI'>$TEN_LOAI_THIET_BI</option>";
+                                                        	}
+                                                        } else {
+                                                        	echo "<option value=''>k co du lieu</option>";
+                                                        }
+                                                        ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -111,7 +114,7 @@ if ($num > 0) {
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Chi tiết về phòng</h4>
+                            <h4 class="modal-title">Chi tiết thiết bị trong từng loại phòng</h4>
                         </div>
                         <div class="modal-body" id="employee_detail2">
                         </div>
@@ -126,7 +129,7 @@ if ($num > 0) {
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Chi tiết về phòng</h4>
+                            <h4 class="modal-title">Chi tiết thiết bị xóa</h4>
                         </div>
                         <div class="modal-body" id="xoatTlpemployee_detail2">
                         </div>
